@@ -1,0 +1,37 @@
+.txt{
+
+	color:#005aa7;
+	border:0px;
+	border-bottom:1px solid #005aa7; /* 下划线效果 */
+	background-color:transparent; /* 背景色透明 */
+	font-size: 19px;
+	line-height: 25px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	padding: 15px 0px;
+}
+form{
+	padding: 80px 300px;
+	font-weight: 600;
+	font-size: 19px;
+}
+.yzm{
+	position: absolute;
+	left: 600px;
+	top: 325px;
+	background-color: #00cbcb;
+	border: 0;
+	padding: 8px 2px;
+	color: white;
+	border-radius: 15px;
+}
+.sub{
+	
+	padding: 10px 80px;
+	margin-left: 310px;
+	border-radius: 5px;
+	font-size: 19px;
+	border: 0;
+	color: white;
+	background-color: #00cbcb;
+}

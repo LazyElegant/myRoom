@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>首页</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/stisla.css">
+<link rel="stylesheet" href="css/responsiveslides.css">
+<style>
+
+.rslides{
+	width: 100%;
+	position:relative;
+	z-index:3;
+}
+.rslides img{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	width:100%;
+	margin:auto;
+	z-index: -1;
+	*zoom:1;
+}
+.rslides:before {
+	content: "";
+	display: inline-block;
+	padding-bottom: 100%;
+	width: 0.1px;    /*必须要有数值，否则无法把高度撑起来*/
+	vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg main-navbar">
+	<div class="container-fluid">			
+	  <a class="navbar-brand" href="#">
+	  </a>
+	  <button class="navbar-toggler" type="button">
+		
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		  
+		  <div class="mr-auto"></div>
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link smooth-link" href="#">首页</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link smooth-link" href="#blog">主要人物</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link smooth-link" href="#history">航天发展历史</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link smooth-link" href="templates/appreciate.html">美图欣赏</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link smooth-link" href="templates/author.html">作者简介</a>
+		  </li>
+		</ul>
+		<form class="form-inline">
+			<a href="templates/contact.html" class="btn smooth-link align-middle btn-primary">需要帮助?</a>
+		</form>
+	  </div>
+  </div>
+</nav>
+
+<div class="image-slider">
+	<!-- Slideshow 1 -->
+	<ul class="rslides" id="slider1" style="background-image: url(img/slider1.jpg);background-repeat: no-repeat;background-size: 100% 100%;" >
+	  </ul>
+</div>
+		<div class="content">
+	<div class="container">
+			<div class="content_top">
+					<div class="wrap">
+						
+						<h1><a href="#">发展航天事业 建设航天强国</a></h1>
+						<p>在世界科技进步迅猛发展、综合国力竞争日趋激烈的新形势下，1992年9月，党中央批准我国载人航天工程以载人飞船起步、以空间站为目标的“三步走”发展战略。第一步，发射载人飞船，建成初步配套的试验性载人飞船工程，开展空间应用实验；第二步，突破航天员出舱活动技术、空间飞行器的交会对接技术，发射空间实验室，解决有一定规模的、短期有人照料的空间应用问题；第三步，建造空间站，解决有较大规模的、长期有人照料的空间应用问题。</p>
+						<span><a class="learnmore" href="templates/understand.html">了解更多</a></span>
+					</div>
+					
+					</div>
+			
+			</div>
+		<section class="padding bg-grey" id="blog">
+	<div class="container">
+		<h2 class="section-title">主要人物</h2>
+		<div class="section-body">
+			<div class="row col-spacing">
+				<div class="col-12 col-md-6 col-lg-4">
+					<article class="card">
+					  <img class="card-img-top" src="img/img_01.jpg" alt="Article Image">
+					  <div class="card-body">
+						<h4 class="card-title"><a href="#">杨利伟</a></h4>
+						<p class="card-text">1987年毕业于中国人民解放军空军航空大学，获得学士学位；2009年1月毕业于清华大学，获得管理学博士学位。中国第一位飞天航天员,荣获联合国教科文组织“空间科学奖章”,全国政协委员</p>
+						<div class="text-right">						    	
+							<a href="#" class="card-more">了解更多</a>
+						</div>
+					</div>
+				  </article>
+			  </div>
+			  <div class="col-12 col-md-6 col-lg-4">
+					<article class="card">
+					  <img class="card-img-top" src="img/img_02.jpg" alt="Article Image">
+					  <div class="card-body">
+						<h4 class="card-title"><a href="#">费俊龙</a></h4>
+						<p class="card-text">毕业于长春航校。曾任中国人民解放军航天员大队大队长、特级航天员，少将军衔，空军某飞行学院飞行技术检查员，飞过歼教五等机型，安全飞行1790小时，为空军特级飞行员。</p>
+						<div class="text-right">						    	
+							<a href="#" class="card-more" >了解更多</a>
+						</div>
+					</div>
+				  </article>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4">
+					<article class="card">
+					  <img class="card-img-top" src="img/img_03.jpg" alt="Article Image">
+					  <div class="card-body">
+						<h4 class="card-title"><a href="#" >聂海胜</a></h4>
+						<p class="card-text">曾任空军航空兵某师某团司令部领航主任，安全飞行1480小时，被评为空军一级飞行员。现为中国人民解放军航天员大队特级航天员、中国航天员大队大队长、专业技术少将军衔。</p>
+						<div class="text-right">						    	
+							<a href="#" class="card-more" >了解更多</a>
+						</div>
+					</div>
+				  </article>
+			  </div>
+			  <div class="col-12 col-md-6 col-lg-4">
+					<article class="card">
+					  <img class="card-img-top" src="img/img_04.jpg" alt="Article Image">
+					  <div class="card-body">
+						<h4 class="card-title"><a href="#" data-toggle="read" data-id="1">翟志刚</a></h4>
+						<p class="card-text">现为中国人民解放军航天员大队特级航天员，专业技术少将军衔。2008年9月25日至27日的神舟七号飞行任务中，担任飞船指令长，是第一位出舱活动的中国人。2018年1月，被中宣部授予“时代楷模”荣誉称号。</p>
+						<div class="text-right">						    	
+							<a href="#" class="card-more" data-toggle="read" data-id="1">了解更多</a>
+						</div>
+					</div>
+				  </article>
+				</div>
+			  <div class="col-12 col-md-6 col-lg-4">
+					<article class="card">
+					  <img class="card-img-top" src="img/img_07.jpg" alt="Article Image">
+					  <div class="card-body">
+						<h4 class="card-title"><a href="#" data-toggle="read" data-id="1">景海鹏</a></h4>
+						<p class="card-text">2018年博士毕业于西安交通大学。现任中国人民解放军航天员大队大队长。先后圆满执行神舟七号载人飞行任务、天宫一号与神舟九号载人交会对接任务、天宫二号与神舟十一号载人飞行任务，成就了三巡苍穹的奇迹。</p>
+						<div class="text-right">						    	
+							<a href="#" class="card-more" data-toggle="read" data-id="1">了解更多</a>
+						</div>
+					</div>
+				  </article>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4">
+					<article class="card">
+					  <img class="card-img-top" src="img/img_05.jpg" alt="Article Image">
+					  <div class="card-body">
+						<h4 class="card-title"><a href="#" data-toggle="read" data-id="1">刘伯明</a></h4>
+						<p class="card-text">2008年9月，执行神舟七号飞行任务，同年11月，被中共中央、国务院、中央军委授予“英雄航天员”荣誉称号，并获“航天功勋奖章”。2018年进入北京理工大学攻读博士学位。2019年12月入选神舟十二号飞行任务乘组</p>
+						<div class="text-right">						    	
+							<a href="#" class="card-more" data-toggle="read" data-id="1">了解更多</a>
+						</div>
+					</div>
+				  </article>
+			  </div>
+		</div>
+		
+	</div>
+</section>
+
+			<div class="specials" id="history">
+				<div class="wrap">
+					<div class="specials-heading">
+						<h3>航天事业发展历程</h3>
+					</div>
+					<div class="specials-grids">
+						<div class="special-grid">
+							<img src="img/1587641021.gif" height="220" title="image-name" />
+							<a href="templates/found.html">“长征一号”开辟中国问天路</a>
+							<p>1970年5月1日晚上，天安门广场上人山人海。《东方红》的旋律通过广播在天安门广场上空响起，明亮的东方红一号卫星飞越天安门上空。</p>
+						</div>
+						<div class="special-grid">
+							<img src="img/d7997fde.gif" height="220"  title="image-name" />
+							<a href="templates/pioneer.html">从神舟一号到十三号</a>
+							<p>神舟飞船，是我国自行研制的宇宙飞船。我们今天所看到的神舟十三号飞船，从名字就可以看出是神舟系列的13代飞船。可以说每一代神舟飞船，都有着不同程度的进步。</p>
+						</div>
+						<div class="special-grid spe-grid">
+							<img src="img/4040e2c5b6743a7aea412b40918714d1.gif" height="220"  title="image-name" />
+							<a href="templates/divine.html">“神舟五号”载人飞船发射成功</a>
+							<p>航天员杨利伟于2003年10月15日9时整在酒泉卫星发射中心发射，次日返回，10月16日6时23分降落。它的成功发射与返回标志着我国成为世界上第三个把人送入太空的国家。</p>
+						</div>
+						<div class="special-grid">
+							<img src="img/3e7803c0ec5bcdaea92319d3aeb743b7.jpeg" height="220"  title="image-name" />
+							<a href="templates/goddess.html">“嫦娥一号”探月行动</a>
+							<p>“嫦娥奔月”这个在中国流传千古的神话传说，终于变成现实。它是继人造地球卫星、载人航天之后，中国航天活动的又一个里程碑。它开辟了中国航天的新领域，为未来的深空探测积累了丰富的经验。</p>
+						</div>
+						<div class="special-grid spe-grid">
+							<img src="img/25b73a75acaee7bb116300d57e00acd0.jpeg" height="220"  title="image-name" />
+							<a href="templates/seven.html">神舟七号飞天_中国航天员首次太空行走</a>
+							<p>神舟七号，简称“神七”，为中国载人航天工程发射的第七艘飞船，是中国的第三次载人航天飞行任务，也是中国“三步走”空间发展战略的第二阶段。</p>
+						</div>
+						<div class="clear"> </div>
+					</div>
+			    </div>
+			</div>	
+			
+			
+		</div>
+	<div id="footer">
+		<div class="container">
+			<h3 class="text-center">联系我们</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3><bold>Address</bold></h3>
+                    <h5>福建省厦门市集美区xxx号</h5>
+                </div>
+                <div class="col-md-4">
+                    <h3><bold>Send Us A Message:</bold></h3>
+                    <h5>xxx@qq.com</h5>
+                </div>
+                <div class="col-md-4">
+                    <h3><bold>QQ：</bold></h3>
+                    <h5>xxxxxxxxxxxx</h5>
+                </div>
+			</div>
+		</div>
+		<div class="contact">
+			<div class="container">
+				<a href="templates/contact.html">寻求帮助吗?</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		let count = 2
+		$(function(){ 
+			setInterval(function(){
+				$(".rslides").css("background-image","url(img/slider"+ count+ ".jpg)");
+				count = count >= 3 ? 1 : count + 1;
+			},3000);
+		
+			$(".navbar-toggler").click(function(){
+				$("#navbarNav").toggle("collapse")
+			})
+		})
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+.coursePay{
+	float: left;
+	margin-left:17%;
+	margin-top: 3%;
+	width: 30%;
+	height: 35%;
+	background: #feffeb;
+}
+.courseOrder{
+	float: left;
+	margin-left:6%;
+	margin-top: 3%;
+	width: 35%;
+	height: 40%;
+	
+	background: #feffeb;
+}
+.courseOrder .ur{
+	margin-left:8%;
+	margin-right:8%;
+	line-height: 50px;
+	font-size: 23px;
+	font-weight: 500;
+}
+.courseOrder .total{
+	margin-left:8%;
+	margin-right:8%;
+	font-size: 23px;
+	font-weight: 500;
+}
+
+
+@media (max-width:1250px) {
+	.courseOrder .ur{
+		font-size: 20px;
+	}
+
+	.courseOrder .total{
+		font-size: 20px;
+	}
+}
+input[type=radio]{
+	position: relative;
+	top: -50px;
+	margin-bottom: 20px;
+	width: 50px;
+}
+
+.basicMou1{
+	display: inline-block;
+	float: left;
+	width: 40%;
+	margin-left: 6%
+}
+.basicMou2{
+	display: inline-block;
+	float: right;
+	width: 40%;
+	margin-right: 6%
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>首页</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/stisla.css">
+<link rel="stylesheet" href="css/responsiveslides.css">
+<style>
+
+.rslides{
+	width: 100%;
+	position:relative;
+	z-index:3;
+}
+.rslides img{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	width:100%;
+	margin:auto;
+	z-index: -1;
+	*zoom:1;
+}
+.rslides:before {
+	content: "";
+	display: inline-block;
+	padding-bottom: 100%;
+	width: 0.1px;    /*必须要有数值，否则无法把高度撑起来*/
+	vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg main-navbar">
+	<div class="container-fluid">			
+	  <a class="navbar-brand" href="#">
+	  </a>
+	  <button class="navbar-toggler" type="button">
+		
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		  
+		  <div class="mr-auto"></div>
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link smooth-link" href="#">首页</a>
+		  </li>
+		</ul>
+		<form class="form-inline">
+			<a href="templates/login.html" class="btn smooth-link align-middle btn-primary">登录</a>
+		</form>
+		<form class="form-inline">
+			<a href="templates/registered.html" class="btn smooth-link align-middle btn-primary">注册</a>
+		</form>
+	  </div>
+  </div>
+</nav>
+
+<div class="image-slider">
+	<ul class="rslides" id="slider1" style="background-image: url(img/slider1.jpg);background-repeat: no-repeat;background-size: 100% 100%;" >
+	  </ul>
+</div>
+	<div class="content">
+		<div class="container">
+			<div class="content_top">
+				<div class="wrap">
+						
+						<h1><a href="#">抗美援朝长津湖战役</a></h1>
+						<p>长津湖战役是抗美援朝第二次战役中发生在长津湖地区的一场战役。长津湖战役中，中国人民志愿军第9兵团3个军，在艰难困苦的条件下，与武器装备世界一流、战功显赫的美军第10军，于1950年11月27日至12月24日在朝鲜长津湖地区进行了直接较量，创造了抗美援朝战争中全歼美军一个整团的纪录，迫使美军王牌部队经历了有史以来“路程最长的退却”。</p>
+						<span><a class="learnmore" href="templates/cjh.html">了解更多</a></span>
+				</div>
+			</div>	
+		</div>
+	<div id="footer">
+		<div class="container">
+			<h3 class="text-center">联系我们</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3><bold>Address</bold></h3>
+                    <h5>福建省厦门市集美区xxx号</h5>
+                </div>
+                <div class="col-md-4">
+                    <h3><bold>Send Us A Message:</bold></h3>
+                    <h5>xxx@qq.com</h5>
+                </div>
+                <div class="col-md-4">
+                    <h3><bold>QQ：</bold></h3>
+                    <h5>xxxxxxxxxxxx</h5>
+                </div>
+			</div>
+		</div>
+		<div class="contact">
+			<div class="container">
+				<a href="#">寻求帮助吗?</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		let count = 2
+		$(function(){ 
+			setInterval(function(){
+				$(".rslides").css("background-image","url(img/slider"+ count+ ".jpg)");
+				count = count >= 3 ? 1 : count + 1;
+			},3000);
+		
+			$(".navbar-toggler").click(function(){
+				$("#navbarNav").toggle("collapse")
+			})
+		})
+		
+	</script>
+</body>
+</html>

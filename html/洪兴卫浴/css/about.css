@@ -1,0 +1,21 @@
+.bigImg img{
+	height: 500px;
+	width: 100%;
+}
+.imgGroup img{
+	padding: 50px 10%;
+	width: 80%;
+	height: 500px;
+}
+.tiite{
+	width: 100%;
+	text-align: center;
+	font-size: 33px;
+	font-weight: 600;
+	margin: 20px 0px;
+}
+.content p{
+	font-size: 18px;
+	width: 100%;
+	text-align: center;
+}

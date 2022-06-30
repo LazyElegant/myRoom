@@ -1,0 +1,99 @@
+.content{
+	height: 1500px;
+}
+.mu{
+	position:absolute;
+	width: 100%;
+	background-color: #f1f1f1 ;
+	height: 300px;
+	z-index: 1;
+}
+.content .inform{
+	position:relative;
+	margin: 0px 130px;
+	width: 930px;
+	z-index: 2;
+	
+} 
+.content .inform .informImg{
+	float: left;
+	width: 300px;	
+}
+.content .inform img{
+	margin-top: 50px;
+	margin-left: 350px;
+	width: 250px;
+}
+.content .inform .tag{
+	float: left;
+	margin-top: 77px;
+	margin-left: 317px;
+	height: 29px;
+	line-height: 29px;
+	width: 78px;
+	text-align: center;
+	font-size: 13px;
+    background: #21b1fb;
+	color: white;
+}
+.content .inform .smallTitle h2{
+	float: left;
+	margin-top: 7px;
+	margin-left: 317px;
+}
+.content .inform .details{
+	float: left;
+	
+}
+.content .inform .details p{
+	margin-top: 7px;
+	margin-left: 317px;
+	font-size: 16px;
+	text-align: left;	
+}
+.inform .right{
+	margin-left: 317px;
+	float: left;
+}
+.content .tiite{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 33px;
+	font-weight: 600;
+	margin: 50px 0px;
+}
+.content .ck{
+	color: #0098ca;
+	float: right;
+	margin-top: -100px;
+}
+.content .text{
+	
+	padding: 0px 250px;
+}
+.content .text .information{
+	float: left;
+	margin-left: 2%;
+	margin-top: 30px;
+	height: 430px;
+	background-color: #f7f7f7;
+	width: 46%;
+}
+.content .text .information img{
+	width: 100%;
+	height: 311px;
+}
+.content .text .information b{
+	padding: 35px;
+	font-size: 18px;
+}
+
+.content .text .information span{
+	padding: 35px;
+	color: #9d9d9d;
+	
+}
+.content .text .information .right{
+	padding: 5px 35px;
+}

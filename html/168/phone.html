@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>168商城|格美集团格美会会员商城|名牌优品,超值价格!</title>
+		<link rel="stylesheet" href="lib/layui/css/layui.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/head.css" />
+
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+
+		<!-- 登录页 -->
+		<div id="light" class="white_content">
+			<ul class="layui-tab-title align-center">
+				<li class="layui-this">普通登录</li>
+				<li id="phoneLogin">手机号登录</li>
+			</ul>
+			<div class="input-div div-mr">
+				<img src="img/phone.png" class="img">
+				<input placeholder="请输入手机号/邮箱" class="padl10 input">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<img src="img/pwd.png" class="img">
+				<input type="password" placeholder="请输入6-15字母+数字密码" class="padl10 input">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<input class="yzm input"> <img src="img/kaptcha.jpg">
+			</div>
+			<div class="div-mr mart-30 align-center login" style="color: #fff;line-height: 40px;font-size: 16px;">登录
+			</div>
+			<p class="mart-10" id="regiest">免费注册</p>
+			<p class="mart-10" id="forgetpwd">忘记密码</p>
+		</div>
+
+		<!--手机号登录页 -->
+		<div id="phoneLight" class="white_content">
+			<ul class="layui-tab-title align-center">
+				<li id="numberLogin">普通登录</li>
+				<li class="layui-this">手机号登录</li>
+			</ul>
+			<div class="input-div div-mr">
+				<img src="img/phone.png" class="img">
+				<input placeholder="请输入手机号" class="padl10 input">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<input class="yzm input"> <img src="img/kaptcha.jpg">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<img src="img/verification_code.png" class="img">
+				<input placeholder="请输入验证码" class="padl10 input">
+				<span style="color: #8b3734;" class="cursorp" id="getcode">获取</span>
+			</div>
+			<div class="div-mr mart-30 align-center login" style="color: #fff;line-height: 40px;font-size: 16px;">登录
+			</div>
+
+		</div>
+		<!--注册页 -->
+		<div id="re" class="re_content">
+			<p class="align-center" style="font-size: 18px; padding-bottom: 20px;">注册</p>
+			<div class="input-div div-mr">
+				<img src="img/phone.png" class="img">
+				<input placeholder="请输入手机号" class="padl10 input">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<img src="img/pwd.png" class="img">
+				<input type="password" placeholder="请输入6-15字母+数字密码" class="padl10 input">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<input class="yzm input"> <img src="img/kaptcha.jpg">
+			</div>
+			<div class="input-div div-mr mart-20">
+				<img src="img/verification_code.png" class="img">
+				<input placeholder="请输入验证码" class="padl10 input">
+				<span style="color: #8b3734;" class="cursorp" id="getcode">获取</span>
+			</div>
+			<div class="mart-10 div-mr">
+				<input name="like1[write]" lay-skin="primary" title="" checked="" style="display: none;"
+					type="checkbox">
+				<div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i
+						class="layui-icon layui-icon-ok"></i></div>
+				<span>我已阅读并同意</span>
+				<span class="menu cursorp">《会员条款》</span>
+			</div>
+			<div class="div-mr mart-30 align-center login" style="color: #fff;line-height: 40px;font-size: 16px;">注册
+			</div>
+			<div class="align-center mart-30" style="font-size: 13px;">
+				<span class="mart-10">已有账号，</span>
+				<span class="mart-10 menu cursorp" id="toLogin">登录</span>
+			</div>
+		</div>
+		<!-- 关闭按钮 -->
+		<span class="layui-layer-setwin" id="close" style="display: none;"><a
+				class="layui-layer-ico layui-layer-close layui-layer-close2" href="javascript:;"></a></span>
+		<!-- 遮罩层 -->
+		<div id="fade" class="black_overlay"></div>
+
+		<div id="head" class="w100">
+			<!--用户信息栏-->
+			<div id="userinfo">
+				<div class="w70 mauto clearfix">
+					<span class="ad_title fl-left">168商城名牌低价，欢迎您！</span>
+					<!--用户信息-->
+					<ul class="fl-right clearfix userdetail">
+						<li class="needlogin" id="login">
+							登录</li>
+						<li class="border_right_white needlogin" id="register">
+							注册
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div id="banner_nav">
+				<div class="mauto clearfix" style="width: 1200px;">
+					<ul class="clearfix banner_nav_ul">
+						<li><img style="margin-right:40px;width: 130px;" src="img/logo_red.png"></li>
+						<li class="goods_classification">
+							<div
+								style="width: 180px;height: 40px;background-color: #f2f2f2;margin-top: 30px;line-height: 40px;padding-left: 44px;">
+								<i class="layui-icon layui-icon-app" style="font-size: 12px; color: #000;"></i>
+								所有商品分类
+							</div>
+							<ul class="fts14 big_type" id="big_type_view" style="display: none;">
+								<li data-select="42" class="bigtitleSelect">
+									<img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2021-06-23/1624420083832-135566-2021-06-23.png"
+										alt="">
+									3C数码
+								</li>
+								<li data-select="61" class="">
+									<img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-27/1585303115607-747450-2020-03-27.png"
+										alt="">大小家电
+								</li>
+								<li data-select="94" class="">
+									<img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-27/1585303162996-127396-2020-03-27.png"
+										alt="">家居百货
+								</li>
+								<li data-select="124" class="">
+									<img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-27/1585303172378-771207-2020-03-27.png"
+										alt="">美妆洗护
+								</li>
+								<li data-select="148" class="">
+									<img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-31/1585642288373-784911-2020-03-31.png"
+										alt="">床品纺织
+								</li>
+								<li data-select="215" class=""> <img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-27/1585303221066-481735-2020-03-27.png"
+										alt="">食品饮料 </li>
+								<li data-select="223" class=""> <img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-27/1585303243982-344665-2020-03-27.png"
+										alt="">虚拟卡券 </li>
+								<li data-select="300" class=""> <img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-31/1585642316401-307107-2020-03-31.png"
+										alt="">格美热卖 </li>
+								<li data-select="306" class=""> <img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-03-31/1585642300963-228339-2020-03-31.png"
+										alt="">车主专区 </li>
+								<li data-select="323" class=""> <img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2020-06-19/1592560496855-61258-2020-06-19.png"
+										alt="">办公用品 </li>
+								<li data-select="364" class=""> <img style="width: 22px;height: 22px;"
+										src="https://168-images-1255610314.cos.ap-shanghai.myqcloud.com/file_upload/folder/2021-06-24/1624500387748-691847-2021-06-24.png"
+										alt="">乡村振兴馆 </li>
+							</ul>
+							<div class="-">
+								<div class="selections c333" data-child-select="42" style="display: none;">
+									<div class="parent_title">
+										<div class="fts16" style="border-bottom: 1px solid #ccc;line-height: 45px;">
+											手机/手机配件</div>
+										<ul class="child_title clearfix fts12">
+											<li class="fl-left"> <a href="javascript:;"
+													style="color: #666!important;">手机</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													style="color: #666!important;">充电器/数据线</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													style="color: #666!important;">配件</a> </li>
+										</ul>
+									</div>
+									<div class="parent_title">
+										<div class="fts16" style="border-bottom: 1px solid #ccc;line-height: 45px;">智能设备
+										</div>
+										<ul class="child_title clearfix fts12">
+											<li class="fl-left"> <a href="javascript:;"
+													style="color: #666!important;">智能手环/手表</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													style="color: #666!important;">智能音响</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													style="color: #666!important;">智能家居</a> </li>
+										</ul>
+									</div>
+									<div class="parent_title">
+										<div class="fts16" style="border-bottom: 1px solid #ccc;line-height: 45px;">电器配件
+										</div>
+										<ul class="child_title clearfix fts12">
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','60','电脑配件',3)"
+													style="color: #666!important;">电脑配件</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','247','开关插座',3)"
+													style="color: #666!important;">开关插座</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','408','电池',3)"
+													style="color: #666!important;">电池</a> </li>
+										</ul>
+									</div>
+									<div class="parent_title">
+										<div class="fts16" onclick="goSearch('','54','影音娱乐',2)"
+											style="border-bottom: 1px solid #ccc;line-height: 45px;">影音娱乐</div>
+										<ul class="child_title clearfix fts12">
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','55','摄影录音',3)"
+													style="color: #666!important;">摄影录音</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','57','音箱/音响',3)"
+													style="color: #666!important;">音箱/音响</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','58','耳机/耳麦',3)"
+													style="color: #666!important;">耳机/耳麦</a> </li>
+										</ul>
+									</div>
+									<div class="parent_title">
+										<div class="fts16" onclick="goSearch('','317','电脑',2)"
+											style="border-bottom: 1px solid #ccc;line-height: 45px;">电脑</div>
+										<ul class="child_title clearfix fts12">
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','318','笔记本',3)"
+													style="color: #666!important;">笔记本</a> </li>
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','319','平板电脑',3)"
+													style="color: #666!important;">平板电脑</a> </li>
+										</ul>
+									</div>
+									<div class="parent_title">
+										<div class="fts16" onclick="goSearch('','405','电子教育',2)"
+											style="border-bottom: 1px solid #ccc;line-height: 45px;">电子教育</div>
+										<ul class="child_title clearfix fts12">
+											<li class="fl-left"> <a href="javascript:;"
+													onclick="goSearch('','406','翻译笔/录音笔',3)"
+													style="color: #666!important;">翻译笔/录音笔</a> </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="short_menu">
+							<a href="index.html">首页</a>
+						</li>
+						<li class="short_menu">
+							<a href="javascript:;">超划算</a>
+						</li>
+						<li class="short_menu">
+							<a href="javascript:;">酒店预订</a>
+						</li>
+						<li class="short_menu">
+							<a href="javascript:;">酒店采购专区</a>
+						</li>
+						<li style="width: 200px;">
+							<div class="clearfix"
+								style="border: 1px solid #ccc;height: 30px;margin-top: 35px;border-radius: 6px;width: 200px;">
+								<input id="searchInput" type="text" placeholder="手机" class="w100"
+									style="float: left;height: 100%;font-size: 12px;" />
+								<i class="layui-icon layui-icon-search"
+									style="font-size: 18px;margin-left: 10px;margin-right: 10px; color: #000;position:absolute;top: -35px;right: 0;"></i>
+							</div>
+						</li>
+						<li>
+							<a href="client.html">
+								<div class="shopcartNum">1</div>
+								<i class="layui-icon" style="font-size: 18px; margin-left: 30px; color: #000;"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content" style="background-color: #f2f2f2;">
+			<div class="mauto" style="width: 1166px;padding-bottom: 20px;">
+				<div class="position padtb20">
+					<span class="layui-breadcrumb" lay-separator=">" style="visibility: visible;">
+						<a>
+							<img class="locationpic" src="img/location.png">
+							您现在的位置：
+						</a>
+						<span lay-separator="">&gt;</span>
+						<a><cite style="font-size: 12px;">商品搜索</cite></a>
+						<span lay-separator="">&gt;</span>
+						<a><cite style="font-size: 12px;">手机</cite></a>
+					</span>
+				</div>
+				<div class="condtion_type mart-20">
+					<div class="clearfix padtb20">
+						<div class="brand_name">
+							品牌:
+						</div>
+						<div class="sl-value" style="padding-right:1.2rem;position: relative;">
+							<!--<div class="morebrand" style="position: absolute;">更多</div>-->
+							<div class="sl-v-list">
+								<ul class="J_valueList v-fixed" id="c_brandsview">
+									<li data-initial="Y" brandid="116" brandname="小米" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>小米</a> </li>
+									<li data-initial="Y" brandid="970" brandname="荣耀" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>荣耀</a> </li>
+									<li data-initial="Y" brandid="52" brandname="VIVO" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>VIVO</a> </li>
+									<li data-initial="Y" brandid="117" brandname="华为" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>华为</a> </li>
+									<li data-initial="Y" brandid="344" brandname="苹果" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>苹果</a> </li>
+									<li data-initial="Y" brandid="50" brandname="OPPO" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>OPPO</a> </li>
+									<li data-initial="Y" brandid="1436" brandname="realme" style="display:block;"> <a
+											href="javascript:;"> <i
+												class="layui-icon brandstatus layui-icon-circle marr10 uhide"
+												style="color: #999;"></i>realme</a> </li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+					<div class="clearfix padtb20">
+						<div class="brand_name">
+							排序:
+						</div>
+						<div class="sl-value">
+							<div class="sl-v-list">
+								<ul class="J_valueList v-fixed searchval">
+									<li data-initial="Y" datatype="all" style="display:block;width: 80px;">
+										<a href="javascript:;" class="c8b3734">
+											<i></i>全部</a>
+									</li>
+									<li data-initial="Y" datatype="price" class="cursorp"
+										style="display:block;width: 80px;">
+										<span>价格</span>
+										<div class="arr_div">
+											<img class="esc" src="img/arrangeup.png" alt="">
+											<img class="desc" src="img/arrangedown.png" alt="">
+										</div>
+									</li>
+									<li data-initial="Y" datatype="salecount" class="cursorp"
+										style="display:block;width: 80px;">
+										<span>销量</span>
+										<div class="arr_div">
+											<img class="esc" src="img/arrangeup.png" alt="">
+											<img class="desc" src="img/arrangedown.png" alt="">
+										</div>
+									</li>
+									<li data-initial="Y" datatype="enum" class="cursorp"
+										style="display:block;width: 80px;">
+										<span>评论数</span>
+										<div class="arr_div">
+											<img class="esc" src="img/arrangeup.png" alt="">
+											<img class="desc" src="img/arrangedown.png" alt="">
+										</div>
+									</li>
+									<li data-initial="Y" datatype="uptime" class="cursorp"
+										style="display:block;width: 80px;">
+										<span>上架时间</span>
+										<div class="arr_div">
+											<img class="esc" src="img/arrangeup.png" alt="">
+											<img class="desc" src="img/arrangedown.png" alt="">
+										</div>
+									</li>
+									<li style="display:block;width: auto;">
+										<div class="layui-form-item">
+											<div class="layui-inline">
+												<div class="layui-input-inline" style="width: 100px;">
+													<input name="pricestart" placeholder="￥" autocomplete="off"
+														class="layui-input" type="text">
+												</div>
+												<div class="layui-form-mid">-</div>
+												<div class="layui-input-inline" style="width: 100px;">
+													<input name="priceend" placeholder="￥" autocomplete="off"
+														class="layui-input" type="text">
+												</div>
+											</div>
+											<button type="button" class="layui-btn"
+												style="float: none;height: 30px;line-height: 30px;background-color: #8B3734;"
+												lay-event="check">确定</button>
+											<button type="button" class="layui-btn"
+												style="float: none;height: 30px;line-height: 30px;background-color: #8B3734;"
+												lay-event="reset">重置价格</button>
+											<!--<div class="" style="display: inline-block;">确定</div>-->
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<ul id="c_goodslist" class="clearfix mart-20">
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_20.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333" title="小米 Redmi 红米Note8 Pro 6400万四摄屏手机拍照智能学生手机">
+								小米 Redmi 红米Note8 Pro 6400万四摄屏手机拍照智能学生手机 </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1499</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_21.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								 VIVO X50 Pro 5G手机 微云台超感光主摄 60倍变焦 90Hz轻薄曲面屏 双模5G全网通手机  </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">3958</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_22.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333" >
+								 荣耀 畅玩9A全网通4G智能手机 大容量电池超长续航  </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1499</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_23.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								 小米 Redmi红米 10X 5G全网通双卡智能手机  </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1799</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_24.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								 VIVO S9 5G版 天玑1100旗舰6nm芯片   </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">2999</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_25.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								  OPPO 4800万四摄5000mAh长续航90Hz电竞屏5G全网通手机 K7x   </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1299</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_26.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								  小米 Redmi红米9 全网通4G智能手机 REDMI 9   </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1199</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_27.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								  VIVO Y 3S标准版 全面屏 大电池强续航 AI智慧摄影 全网通智能手机   </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1199</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_28.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								   荣耀 荣耀X10Max 5G双模全网通 7.09英寸超大屏   </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">2699</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_29.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								  VIVO IQOO U1全网通拍照大屏幕手机 骁龙720八核处理器 </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">1398</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_30.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								   荣耀 HONOR X10 双模5G九频 90Hz全速屏 RYYB高感光摄影 麒麟820    </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">2499</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="imgpic bgfff">
+							<img class="addshopcar layui-icon-cart " src="img/c_addshocar.png" />
+							<img class="addfoucus" src="img/c_addfouce%20(1).png">
+							<img class="goodpic" src="img/ThumbImg_31.jpg">
+						</div>
+						<div class="goods_detail">
+							<div class="wordwrap cut-Text fts16 c333">
+								   苹果 Apple5G全网通双卡双待手机 iPhone12    </div>
+							<div class="clearfix" style="line-height: 40px;">
+								<div class="fl-left c8b3734 fts14">￥<span style="font-size: 16px;">5199</span></div>
+								<div class="fl-right c999 fts12">K币最高抵扣50%</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div id="laypage" style="background-color: #fff;padding: 0 10px;">
+					<div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
+						<a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0">上一页</a>
+						<span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+						<a href="javascript:;" class="layui-laypage-next layui-disabled" data-page="2">下一页</a>
+						<span class="layui-laypage-skip">到第<input type="text" min="1" value="1" class="layui-input">页<button type="button" class="layui-laypage-btn">确定</button></span>
+						<span class="layui-laypage-count">共 12 条</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bottomDiv">
+			<div class="mauto" style="width: 1167px;">
+				<ul class="ul_4 bottomDiv_title clearfix">
+					<li><img alt="" src="img/index_duo.png"><span>品类齐全，轻松购物</span></li>
+					<li>
+						<img alt="" src="img/index_you.png">
+						<span>品质护航，全场免邮</span>
+					</li>
+					<li>
+						<img alt="" src="img/index_te.png">
+						<span>特色服务，精致售后</span>
+					</li>
+					<li>
+						<img alt="" src="img/index_sheng.png">
+						<span>天天低价，超低折扣</span>
+					</li>
+				</ul>
+				<ul class=" bottomDiv_menu clearfix">
+					<li style="width: 473px;height: 100px;">
+		
+					</li>
+					<li style="width: 296px;">
+						<div class="fts20 fff padtb20">客服服务</div>
+						<ul class="clearfix">
+							<li class="tx_c" style="margin-right: 43px;">
+								<img alt="" src="img/kfxzs.png">
+								<div class="fts14 fff mart-20">客服小助手</div>
+							</li>
+							<li class="tx_c">
+								<img alt="" src="img/yhfk.png">
+								<div class="fts14 fff mart-20">用户反馈</div>
+							</li>
+						</ul>
+					</li>
+					<li style="width: 230px;padding-top: 20px;line-height: 25px;">
+						<ul class="clearfix fts12 fff tx_r" id="helpcenterlist">
+							<li class="w50 fl-left cursorp">联系我们</li>
+							<li class="w50 fl-left cursorp">支付方式</li>
+							<li class="w50 fl-left cursorp">常见问题</li>
+							<li class="w50 fl-left cursorp">服务协议</li>
+							<li class="w50 fl-left cursorp">购物指南</li>
+							<li class="w50 fl-left cursorp">售后服务</li>
+							<li class="w50 fl-left cursorp">试用规则</li>
+							<li class="w50 fl-left cursorp">福利社规则</li>
+							<li class="w50 fl-left cursorp">超划算规则</li>
+							<li class="w50 fl-left cursorp">支付奖励K币规则</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="companyinfo">
+		
+				网站声明及备案号:©Copyright 2018郑重声明：上海峥津电子商务有限公司版权所有，本网站所有页面及图书未经上海峥津电子商务有限公司的明确书面认可，不得以任何形式转载使用，违者必究。
+				<a href="#" style="color:#dedede">沪ICP备10009470号</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+
+.basicText{
+	width: 100%;
+	text-align: center;
+	top: 127px;
+	color: white;
+	font-weight: 1000;
+	font-size: 23px;
+	
+}
+.basicText1{
+	float: right;
+	margin-top: -10%;
+	margin-right: 10%;
+	color: white;
+	font-size: 23px;	
+}
+.basicText2{
+	float: right;
+	margin-top: -8%;
+	margin-right: 10%;
+	color: white;
+	font-size: 23px;
+	
+}
+.basicText_1{
+	
+	float: left;
+	margin-top: 10%;
+	margin-left: 5%;
+	width: 330px;
+	color: white;
+}
+.basicText_2 {
+    float: left;
+    width: 330px;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-weight: bold;
+    line-height: 50px;
+    top: 273px;
+    color: white;
+}
+.indexTest{
+	margin-top: 6%;
+	width: 100%;
+	text-align: center;
+	
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 57px;
+	/* identical to box height */
+	color: #FFFFF0;
+}
