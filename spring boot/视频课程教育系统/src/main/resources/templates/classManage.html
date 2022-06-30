@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/common.css" type="text/css">
+
+	<meta charset="utf-8">
+	<title>课程管理</title>
+
+	<style>
+		.entry-header{
+			width: 250px;
+		}
+		table{
+			border: lightsteelblue 1px solid;
+		}
+		table tr th{
+			padding: 13px 23px;
+			text-align: center;
+			border: lightsteelblue 1px solid;
+		}
+		.posts-loop{
+			min-height: 600px;
+		}
+		table tr td{
+			padding: 13px 23px;
+			text-align: center;
+			border: lightsteelblue 1px solid;
+		}
+		table tr td button{
+			margin-left: 3px;
+		}
+
+		h3{
+			font-size:19px;
+		}
+		h2{
+			font-size:20px;
+		}
+		h1{
+			font-size:22px;
+			margin: 0px;
+		}
+	</style>
+
+	<script type='text/javascript' th:src='@{/js/jquery-3.4.1.js}' id='jquery-core-js'></script>
+</head>
+<body class="home blog custom-background fullwidth ie-shortcodes  ie-shortcodes-responsive group-blog">
+
+<div id="page" class="hfeed site layout-fullwidth">
+
+	<div th:replace="~{commons/commons::hea}"></div>
+	<div id="site-content" class="site-content">
+		<div class="container">
+			<div class="row">
+				<div class="content-area posts-loop full-width-layout col-md-12" id="primary">
+					<main id="main" class="site-main row big-posts">
+						<div  class="masonry-item big-item col-md-12 col-sm-12 col-xs-12">
+
+							<div th:replace="~{commons/commons::manage}"></div>
+							<div id="post-2202" style="margin-left:200px;width: 1000px;float: left;padding: 15px;">
+								<article class="styled">
+									<table >
+										<tr>
+											<th>id</th>
+											<th>课程名</th>
+											<th>发布人Id</th>
+											<th>操作</th>
+										</tr>
+										<tr th:each="class:${classes}">
+											<td th:text="${class.getId()}"></td>
+											<td th:text="${class.getName()}"></td>
+											<td th:text="${class.getUser_id()}"></td>
+											<td th:id="${class.getId()}"><button type="submit" class="update">修改</button><button  type="submit" class="detele">删除</button></td>
+										</tr>
+									</table>
+
+								</article>
+								<article class="styled" style="position: fixed;right: 20px;top:450px;">
+									<button type="submit" class="add"> 添加 </button>
+								</article>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="~{commons/commons::footer}"></div>
+
+</div>
+<script>
+	$(".detele").click(function (){
+		if(confirm("确定删除该课程（该课程下的视频与产生的评论会被删除）?")){
+			var thisURL = document.location.href;
+			var  id = $(this).parent().attr('id');
+			document.location.href = thisURL + "/deleteClass?id=" + id;
+		}
+	})
+	$(".update").click(function () {
+			var thisURL = document.location.href;
+			var  id = $(this).parent().attr('id');
+			document.location.href = thisURL + "/updateClass?id=" + id;
+	})
+	$(".add").click(function () {
+		var thisURL = document.location.href;
+		document.location.href = thisURL + "/addClass";
+	})
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" type="text/css">
+		<link rel="stylesheet" th:href="@{/css/common.css}" type="text/css">
+
+		<meta charset="utf-8">
+		<title>用户管理</title>
+
+	<style>
+		table{
+			border: lightsteelblue 1px solid;
+		}
+		table tr th{
+			padding: 13px 23px;
+			text-align: center;
+			border: lightsteelblue 1px solid;
+		}
+		.posts-loop{
+			min-height: 600px;
+		}
+		table tr td{
+			padding: 13px 23px;
+			text-align: center;
+			border: lightsteelblue 1px solid;
+		}
+		table tr td button{
+			margin-left: 3px;
+		}
+
+		h3{
+			font-size:19px;
+		}
+		h2{
+			font-size:20px;
+		}
+		h1{
+			font-size:22px;
+			margin: 0px;
+		}
+
+	</style>
+
+		<script type='text/javascript' th:src='@{/js/jquery-3.4.1.js}' id='jquery-core-js'></script>
+		<script type='text/javascript' th:src='@{/js/common.js}'></script>
+
+	</head>
+	<body class="home blog custom-background fullwidth ie-shortcodes  ie-shortcodes-responsive group-blog">
+		
+		<div id="page" class="hfeed site layout-fullwidth">
+
+			<div th:replace="~{commons/commons::hea}"></div>
+			<div id="site-content" class="site-content">
+				<div class="container">
+					<div class="row">
+						<div class="content-area posts-loop full-width-layout col-md-12" id="primary">
+							<main id="main" class="site-main row big-posts">
+								<div  class="masonry-item big-item col-md-12 col-sm-12 col-xs-12">
+
+									<div th:replace="~{commons/commons::manage}"></div>
+									<div id="post-2202" style="width: 800px;float: left;padding: 15px;">
+										<article class="styled">
+											<table >
+												<tr>
+												<th>用户id</th>
+												<th>画师id</th>
+												<th>用户名</th>
+												<th>创建时间</th>
+												<th>状态</th>
+												<th>操作</th>
+												</tr>
+												<tr th:each="painter:${painters}">
+													<td th:text="${painter.getId()}"></td>
+													<td th:text="${painter.getPainterId()}"></td>
+													<td th:text="${painter.getName()}"></td>
+													<td th:text="${painter.getRegistrationTime()}"></td>
+													<td>
+														<span th:if="${painter.getStatus() == 0}" >待审核</span>
+														<span th:if="${painter.getStatus() == 1}" >已驳回</span>
+														<span th:if="${painter.getStatus() == 2}" >正常</span>
+														<span th:if="${painter.getStatus() == 3}" >封号中</span>
+													</td>
+													<td th:id="${painter.getPainterId()}">
+														<button th:if="${painter.getStatus() == 0}" type="submit" class="through">通过审核</button>
+														<button th:if="${painter.getStatus() == 0}" type="submit" class="reject">驳回</button>
+														<button th:if="${painter.getStatus() == 2}" type="submit" class="ban">封号</button>
+														<button th:if="${painter.getStatus() == 3}" type="submit" class="unban">解封</button>
+													</td>
+												</tr>
+											</table>
+										</article>
+									</div>
+								</div>
+							</main>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div th:replace="~{commons/commons::footer}"></div>
+			
+		</div>
+<script>
+		$(".reject").click(function (){
+			if(confirm("确定拒绝该申请?")){
+				var thisURL = document.location.href;
+				var  id = $(this).parent().attr('id');
+				document.location.href = thisURL + "/rejectPainter?id=" + id;
+			}
+		})
+		$(".through").click(function () {
+			if(confirm("确定通过该申请?")){
+				var thisURL = document.location.href;
+				var  id = $(this).parent().attr('id');
+				document.location.href = thisURL + "/throughPainter?id=" + id;
+			}
+		})
+		$(".ban").click(function () {
+			if(confirm("确定封禁该账号画师资格?")){
+				var thisURL = document.location.href;
+				var  id = $(this).parent().attr('id');
+				document.location.href = thisURL + "/banPainter?id=" + id;
+			}
+		})
+		$(".unban").click(function () {
+			if(confirm("确定解禁该账号画师资格?")){
+				var thisURL = document.location.href;
+				var  id = $(this).parent().attr('id');
+				document.location.href = thisURL + "/unbanPainter?id=" + id;
+			}
+		})
+	</script>
+	</body>
+</html>

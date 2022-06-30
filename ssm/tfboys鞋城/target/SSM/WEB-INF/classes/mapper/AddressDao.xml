@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cm.dao.AddressDao">
+
+    <select id="listAddress" resultType="Address">
+        select id,
+        user_id 'userId',
+        address,
+        status
+        from address where user_id = #{id}
+    </select>
+
+    <insert id="insertAddress">
+        insert into `address` values (#{id}, #{userId},#{address},#{status})
+    </insert>
+
+    <delete id="deleteAddress">
+        delete from `address` where  id = #{id}
+    </delete>
+
+    <update id="updateStatus">
+        update `address` set status = 0 where user_id = #{id}
+    </update>
+
+    <update id="selectStatus">
+        update `address` set status = 1 where id = #{id}
+    </update>
+    <select id="select" resultType="Integer">
+        select id
+        from address where user_id = #{id} And status = 1
+    </select>
+</mapper>

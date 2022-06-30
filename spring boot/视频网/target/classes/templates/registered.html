@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>注册</title>
+
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+
+<body style="background-color: #dfd8e8;">
+<div class="container">
+	<div class="row">
+		<aside class="col-sm-5" style="margin: auto">
+			<div class="card" style="margin-top: 80px;margin-bottom:100px;padding-left:20px;padding-right:20px;">
+				<article class="card-body">
+					<a th:href="@{/login}" class="float-right btn btn-outline-primary">Sign in</a>
+					<h4 class="card-title mb-4 mt-1">Sign up</h4>
+					<form id="item"  th:action="@{/addUser}" >
+						<p style="color: red" th:text="${bcz}"></p>
+						<div class="form-group">
+							<label>Your number</label>
+							<input th:value="${u_num}" name="user_num" class="form-control" type="text" id="user_num" onfocus=this.blur()>
+						</div>
+						<div class="form-group">
+							<label>Your name</label>
+							<input name="user_name" class="form-control" type="text" id="user_name" required>
+						</div>
+
+						<div class="form-group">
+							<label>Your password</label>
+							<span  id="passwordTip" style="color:red;font-size: 12px;"></span>
+							<input name="user_password" onchange="checkPassword()" class="form-control" type="password" id="user_password" required>
+						</div>
+
+						<div class="form-group">
+							<label>confirm password</label>
+							<span  id="confirmPasswordTip" style="color:red;font-size: 12px;"></span>
+							<input name="confirm_password" onchange="checkConfirmPassword()" class="form-control" type="password" id="confirm_password" required>
+						</div>
+
+						<div class="form-group">
+							<label>Your email</label><br/>
+							<span  id="emailTip" style="color:red;font-size: 12px;"></span>
+							<input name="user_email" onchange="checkEmail()" class="form-control" type="email" id="email" required>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block"> registration </button>
+						</div>
+					</form>
+				</article>
+			</div>
+		</aside>
+	</div>
+</div>
+<script type='text/javascript' th:src='@{/js/jquery-3.4.1.js}'></script>
+<script type="text/javascript">
+	function checkEmail(){
+		let email = document.getElementById("email").value;
+		if(email.substr(email.lastIndexOf("@")) === "@qq.com" || email.substr(email.lastIndexOf("@")) === "@163.com"){
+			document.getElementById("emailTip").innerHTML="";
+		}else{
+			document.getElementById("emailTip").innerHTML="邮箱格式不正确";
+		}
+		if (email.substr(0,email.lastIndexOf("@")).length<5 || email.substr(0,email.lastIndexOf("@")).length>10){
+			document.getElementById("emailTip").innerHTML="邮箱位数为5-10位之间";
+		}
+	}
+	function checkPassword(){
+		let password = document.getElementById("user_password").value;
+		if (password.length<6 || password.length>18){
+			document.getElementById("passwordTip").innerHTML="密码位数为6-18之间";
+		}else{
+			document.getElementById("passwordTip").innerHTML="";
+		}
+	}
+	function checkConfirmPassword(){
+		let password = document.getElementById("user_password").value;
+		let confirmPassword = document.getElementById("confirm_password").value;
+		if (password !== confirmPassword) {
+			document.getElementById("confirmPasswordTip").innerHTML="密码不一致";
+		}else{
+			document.getElementById("confirmPasswordTip").innerHTML="";
+		}
+	}
+
+</script>
+</body>
+</html>

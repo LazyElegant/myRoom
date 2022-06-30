@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.UserMapper">
+
+
+    <insert id="registration" parameterType="User">
+		insert into `user`
+		values(#{id},#{name},#{password},#{email},#{registrationTime},1);
+	</insert>
+
+	<select id="getUserById" resultType="User">
+        select * from `user`  where id = #{id}
+    </select>
+
+	<select id="getUserVoById" resultType="com.bobo.test.vo.UserVo">
+        select
+		CASE u.`status`
+				WHEN 0 THEN
+					'管理员'
+				WHEN 1 THEN
+					'用户'
+				ELSE
+					'画师'
+		END status,
+			u.id ,
+			u.`name`,
+			u.`password`,
+			u.email,
+			u.registration_time 'registrationTime',
+			p.id 'painterId',
+			u.pic
+		from `user` u
+		LEFT JOIN painter `p` ON u.id = p.user_id and p.status = 2
+		where u.id = #{id}
+    </select>
+
+	<select id="getUserIdByPainterId" resultType="Integer">
+		select u.id
+		from  `user` u
+		left join `painter` p on u.id = p.user_id
+		where p.id = #{painterId}
+	</select>
+	<update id="update">
+		UPDATE `user` SET email = #{email},`name`=#{name} WHERE id = #{id}
+	</update>
+	<update id="updateStatus">
+		UPDATE `user` SET status = #{status} WHERE id = #{id}
+	</update>
+	<update id="updatePic">
+		UPDATE `user` SET pic = #{pic} WHERE id = #{id}
+	</update>
+
+</mapper>

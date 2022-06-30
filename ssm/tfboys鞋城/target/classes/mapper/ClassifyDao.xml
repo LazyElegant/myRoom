@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cm.dao.ClassifyDao">
+    <select id="listClassify" resultType="Classify">
+        select * from classify
+    </select>
+
+    <insert id="insert">
+        insert into `classify` VALUES (#{id},#{name})
+    </insert>
+
+    <delete id="delete">
+        delete from `classify` where  id = #{id}
+    </delete>
+
+    <update id="update">
+        update `classify` set `name` = #{name} where id = #{id}
+    </update>
+</mapper>

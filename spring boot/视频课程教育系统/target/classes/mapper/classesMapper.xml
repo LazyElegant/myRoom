@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.classesMapper">
+
+    <select id="listClassesById" resultType="classes">
+        select * from classes where id = #{id}
+    </select>
+    <select id="listClassesBySpecialtyId" resultType="classes">
+        select * from classes where specialty_id = #{specialtyId}
+    </select>
+
+    <select id="pageClassesBySpecialtyId" resultType="classes">
+        select * from classes where specialty_id = #{specialtyId}
+        Order by num asc
+            LIMIT #{page}, #{limit}
+    </select>
+
+    <select id="getClassesCount" resultType="int">
+        SELECT COUNT(id) FROM classes WHERE specialty_id = #{specialtyId}
+    </select>
+    <select id="getClassesCountByName" resultType="classes">
+        SELECT * FROM classes WHERE `name` like concat('%',#{name},'%')
+    </select>
+
+    <delete id="deleteClass">
+        delete from classes where id = #{id}
+    </delete>
+
+    <insert id="addClass">
+        insert INTO classes
+        VALUES(#{id},#{name},#{specialty_id},#{introduce},#{user_id},#{duration},#{watch},#{photo},#{num})
+    </insert>
+
+    <update id="updateClass">
+        update classes set `name` = #{name},
+                           specialty_id = #{specialty_id},
+                           introduce = #{introduce},
+                           duration = #{duration},
+                           photo = #{photo}
+                        where id = #{id}
+    </update>
+
+</mapper>

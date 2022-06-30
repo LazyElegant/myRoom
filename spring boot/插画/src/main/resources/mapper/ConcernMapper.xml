@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.ConcernMapper">
+    <insert id="insert">
+		insert into `concern`
+		values(#{id},#{userId},#{concernId},#{concernTime});
+	</insert>
+    <select id="getConcern" resultType="Integer">
+		SELECT c.id
+		FROM `concern` c
+		left join `ikon` i on c.concern_id = i.author_id
+		WHERE c.user_id = #{userId} and  i.id = #{ikonId}
+	</select>
+
+    <delete id="unConcern">
+		Delete FROM concern where id = #{id}
+	</delete>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.NewsMapper">
+
+    <insert id="addNews" parameterType="News">
+		insert into News(news_num,news_ify,news_head,news_pic,news_author_num,news_text,current_state,news_date)
+		values(#{news_num},#{news_ify},#{news_head},#{news_pic},#{news_author_num},#{news_text},#{current_state},#{news_date});
+	</insert>
+
+	<select id="queryAllNews" resultType="News">
+        select * from News
+    </select>
+
+    <select id="queryNewsByIfy" resultType="News"  parameterType="String">
+        select * from News where news_ify = #{news_ify};
+    </select>
+
+	<select id="queryNewsByNum" resultType="News" parameterType="String">
+        select * from News where news_num = #{news_num};
+    </select>
+
+    <select id="queryNewsByAuthor" resultType="News">
+        select * from News where news_author_num = #{news_author};
+    </select>
+
+    <select id="queryNewsByName" resultType="News" parameterType="String">
+        select * from News where news_head like #{news_head};
+    </select>
+
+    <update id="updateNews" >
+        update `News` set news_ify = #{news_ify},news_head = #{news_head},news_pic = #{news_pic},news_text = #{news_text},current_state = #{current_state} where news_num = #{news_num};
+    </update>
+
+    <delete id="deleteNews">
+        delete from `News` where news_num = #{news_num};
+    </delete>
+</mapper>

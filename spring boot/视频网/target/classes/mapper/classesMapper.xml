@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.classesMapper">
+
+    <select id="listClassesById" resultType="classes">
+        select * from classes where id = #{id}
+    </select>
+    <select id="listClassesByClassifyId" resultType="classes">
+        select * from classes c
+        where c.classify_id = #{classifyId}
+        LIMIT #{page},#{limit}
+    </select>
+    <select id="getClassesCount" resultType="int">
+        SELECT COUNT(id) FROM classes WHERE classify_id = #{classifyId}
+    </select>
+    <select id="getClassesCountByName" resultType="classes">
+        SELECT * FROM classes WHERE `name` like concat('%',#{name},'%')
+    </select>
+</mapper>

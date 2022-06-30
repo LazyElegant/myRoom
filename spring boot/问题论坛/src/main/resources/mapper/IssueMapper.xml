@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.IssueMapper">
+	
+    <insert id="insertIssue">
+		insert into `issue`
+		values(#{id},#{authorId},#{title},#{context},#{issueTime},1);
+	</insert>
+
+	<select id="listIssue" resultType="com.bobo.test.vo.IssueVo">
+		SELECT i.id,
+			 i.title,
+			 i.issue_time 'issueTime',
+			 u.`name` `author`,
+			 i.context
+		FROM issue i
+		LEFT JOIN `user` u ON u.id = i.author_id
+		where i.status = 1
+	</select>
+
+	<select id="getIssue" resultType="com.bobo.test.vo.IssueVo">
+		SELECT i.id,
+			 i.title,
+			 i.issue_time 'issueTime',
+			 u.`name` `author`,
+			 i.context
+		FROM issue i
+		LEFT JOIN `user` u ON u.id = i.author_id
+		where i.status = 1 and i.id = #{id}
+	</select>
+
+	<select id="listIssueByAuthor" resultType="com.bobo.test.vo.IssueVo">
+		SELECT i.id,
+			 i.title,
+			 i.issue_time 'issueTime',
+			 u.`name` `author`,
+			 i.context
+		FROM issue i
+		LEFT JOIN `user` u ON u.id = i.author_id
+		where i.status = 1 and i.author_id = #{id}
+	</select>
+
+	<update id="deleteIssue">
+		UPDATE `issue` SET status = 99 WHERE id = #{id}
+	</update>
+
+	<update id="update">
+		UPDATE `issue` SET title = #{title},context = #{context} WHERE id = #{id}
+	</update>
+</mapper>

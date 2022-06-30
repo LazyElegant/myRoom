@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/css/common.css}" type="text/css">
+	<title>类语雀社区</title>
+	<script type='text/javascript' th:src='@{/js/jquery-3.4.1.js}'></script>
+	<script type='text/javascript' th:src='@{/js/common.js}'></script>
+</head>
+<body>
+<div id="page" class="hfeed site layout-fullwidth">
+	<div th:replace="~{commons/commons::hea}"></div>
+	<div id="site-content" class="site-content">
+		<div class="container">
+			<div class="row">
+				<div th:classappend="${#strings.isEmpty(session.user)} ? 'content-area posts-loop full-width-layout col-md-12' : 'content-area posts-loop sidebar-layout col-md-8' " id="primary" class="" >
+					<main id="main" class="site-main row big-posts">
+						<div  class="masonry-item big-item col-md-12 col-sm-12 col-xs-12">
+							<article class="styled"  th:each="publish:${session.publish}">
+								<header class="entry-header">
+									<a th:href="@{/news(num=${publish.getNews_num()})}" >
+										<figure style="width: 250px;height:138px;" class="post-image animated-overlay overlay-alt">
+											<img width="100%" height="100%" class="lazyload" th:src="@{${publish.getNews_pic()}}" alt="" />
+											<figcaption>
+											</figcaption>
+										</figure>
+									</a>
+								</header>
+								<div class="entry-content">
+									<div class="post-heading">
+										<h3 class="entry-title"><a th:href="@{/news(num=${publish.getNews_num()})}" rel="bookmark" th:text="${publish.getNews_head()}" ></a></h3>
+										<ul class="post-meta entry-meta">
+											<li class="author">作者id：<a href="#" th:text="${publish.getNews_author_num()}"></a></li>
+											<li th:text="'上一次编辑时间:'+ ${publish.getNews_date()}" ></li>
+											<li class="author">分类：<a href="#" th:text="${publish.getNews_ify()}"></a></li>
+										</ul>
+									</div>
+									<div class="post-excerpt">
+										<p class="note" th:text="${#strings.abbreviate(publish.getNews_text(),100)}"></p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</main>
+				</div>
+				<aside th:if="${not #strings.isEmpty(session.user)}" id="sidebar" class="widget-area sticky-last-widget col-md-4">
+					<div class="row">
+						<div class="col-md-12 col-sm-6">
+							<div id="php_text-2" class="widget styled widget_php_text">
+								<div class="textwidget widget-text">
+									<div data-action="login-template" class="wpu-wrapper wpu-login-wrapper">
+										<div class="wpu-logged-in wpu-profile-mini">
+											<div class="wpu-form-header">
+												<div id="wpu-profile-cover" data-change="false" class="wpu-profile-cover coppic" data-cover>
+												</div>
+												<div class="wpu-profile-meta clear-fix">
+													<div class="wpu-profile-avatar coppic lazyloaded"></div>
+													<div class="wpu-profile-meta-info">
+														<span class="wpu-display-name" th:text="${session.user.getUser_name()} + '(' + ${session.Status} + ')'"></span>
+														<div class="list-meta-info">
+														<span class="user-join-date">
+															注册时间: <span th:text="${session.user.getRegistration_date()}"></span>
+														</span>
+														</div>
+													</div>
+													<div class="wpu-form-body wpu-links">
+														<a th:href="@{/toPersonal}">个人资料</a>
+														<a th:href="@{/OutIndex}">注销</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</aside>
+
+			</div>
+		</div>
+	</div>
+	<div th:replace="~{commons/commons::footer}"></div>
+</div>
+
+</body>
+</html>

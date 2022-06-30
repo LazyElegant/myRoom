@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.coursewareMapper">
+
+    <insert id="addCourseware">
+        insert into `courseware`
+        VALUES (#{id},#{path},#{video_id})
+    </insert>
+
+    <select id="getCourseware" resultType="String">
+        select `path` from `courseware` where video_id = #{id}
+    </select>
+
+</mapper>

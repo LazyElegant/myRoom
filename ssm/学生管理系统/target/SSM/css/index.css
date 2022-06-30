@@ -1,0 +1,22 @@
+.order_table{
+
+    border: 1px solid #EBEBEB;
+    margin: 15px auto 0px;
+}
+td{
+    text-align: center;
+}
+.add{
+    color: white;
+    position: absolute;
+    padding: 10px 25px;
+    text-decoration: none;
+    transition: 0.5s;
+    background-color: red;
+    top: 15px;
+    left: 10px;
+}
+.add:hover{
+    background-color: #000000;
+
+}

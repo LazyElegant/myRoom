@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cm.dao.UserDao">
+    <select id="getAllUsers" resultType="User">
+        select
+         id,
+         username,
+         password,
+         email,
+         registration_date 'registrationDate',
+         status
+         from `user`
+    </select>
+
+    <select id="getUser" resultType="User">
+        select
+         id,
+         username,
+         password,
+         email,
+         registration_date 'registrationDate',
+         status from `user` where id = #{id}
+    </select>
+
+    <insert id="addUser">
+        insert into `user` values (#{id}, #{username},#{password},#{email},#{registrationDate},#{status})
+    </insert>
+
+    <update id="updateUser">
+        update `user` set username=#{username},email=#{email} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        delete from user where id=#{id}
+    </delete>
+
+    <update id="update">
+        update  `user` set password=#{password} where id = #{id}
+    </update>
+</mapper>

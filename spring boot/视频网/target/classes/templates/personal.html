@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/common.css" type="text/css">
+
+    <meta charset="utf-8">
+    <title>个人资料</title>
+    <style>
+        h3{
+            font-size:19px;
+        }
+        h2{
+            font-size:20px;
+        }
+        h1{
+            font-size:22px;
+            margin: 0px;
+        }
+    </style>
+    <script type='text/javascript' th:src='@{/js/jquery-3.4.1.js}' id='jquery-core-js'></script>
+    <script type='text/javascript' src='/js/common.js'></script>
+
+</head>
+<body class="home blog custom-background fullwidth ie-shortcodes  ie-shortcodes-responsive group-blog">
+
+<div id="page" class="hfeed site layout-fullwidth">
+    <div th:replace="~{commons/commons::hea}"></div>
+
+    <div id="site-content" class="site-content">
+        <div class="container">
+            <div class="row">
+                <div class="content-area posts-loop full-width-layout col-md-12" id="primary">
+                    <main id="main" class="site-main row big-posts">
+                        <div  class="masonry-item big-item col-md-12 col-sm-12 col-xs-12">
+                            <article id="post-2202">
+
+                                <header class="entry-header styled">
+                                    <a href="#">
+
+                                        <h1>
+                                            用户中心
+                                        </h1>
+                                    </a>
+                                </header>
+                                <article id="post-3694" class="styled post-3694 post type-post status-publish format-standard has-post-thumbnail hentry category-comic tag-ntr tag-41">
+
+
+                                    <form id="item" th:action="@{/Personal}">
+                                        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                                        <h3>用户名</h3>
+                                        <input style="width: 400px;height: 40px;line-height: 40px;margin-left: 15px;" name="user_name" class="form-control" type="text" th:value="${session.user.getName()}" id="user_name"/>
+                                        <h3>账户id</h3>
+                                        <input style="width: 400px;height: 40px;line-height: 40px;margin-left: 15px;" name="user_num" class="num"  type="text" th:value="${session.user.getId()}" id="user_num" onfocus=this.blur() />
+                                        <h3>邮箱</h3>
+                                        <input style="width: 400px;height: 40px;line-height: 40px;margin-left: 15px;" name="user_email" type="email" id="user_email" class="form-control" th:value="${session.user.getEmail()}" />
+                                        <h3>密码</h3>
+                                        <input style="width: 400px;height: 40px;line-height: 40px;margin-left: 15px;" name="date" class="date"  type="text"  th:value="${session.user.getPassword()}" id="date" onfocus=this.blur() />
+                                        <div class="form-group" style="margin: 20px;">
+                                            <button type="submit"> 修改 </button>
+                                            <button type="submit" style="margin-left: 40px;" id="cz">重置</button>
+                                        </div>
+                                    </form>
+                                </article>
+
+                            </article>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{commons/commons::footer}"></div>
+
+</div>
+
+<script>
+
+    var user_email = null
+    var user_name = null
+
+    function test(span,t){
+        span.remove()
+        window.clearTimeout(t);
+    }
+    function cc(ca){
+        if(ca.next()[0].tagName != document.createElement('span').tagName){
+            var span = ca.after("<span style='color:red'>该项不可以修改</span>");
+            ca.next()
+            var t = window.setTimeout(function(){
+                test(span.next(),t)
+            },1000);
+        }
+    }
+    $('.status').click(function(){
+        cc($('.status'))
+    })
+
+    $('.num').click(function(){
+        cc($('.num'))
+    })
+    $('.date').click(function(){
+        cc($('.date'))
+    })
+    window.onload = function() {
+        user_name = $('#user_name').val()
+        user_email = $('#user_email').val()
+    }
+    $('#cz').click(function () {
+        $('#user_name').val(user_name)
+        $('#user_email').val(user_email)
+    })
+</script>
+</body>
+</html>

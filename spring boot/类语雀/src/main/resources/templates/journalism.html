@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+
+		<meta charset="utf-8">
+		<title>文章管理</title>
+
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" type="text/css">
+		<link rel="stylesheet" th:href="@{/css/common.css}" type="text/css">
+	<style>
+		select{
+			color: slategrey;
+			margin-left: 20px;
+			font-size: 15px;
+			padding: 10px;
+			width: 300px;
+		}
+		option{
+			font-size: 15px;
+		}
+		h2{
+			font-size:18px;
+		}
+		h1{
+			font-size:22px;
+			margin: 0px;
+		}
+	</style>
+		<script type='text/javascript' th:src='@{/js/jquery-3.4.1.js}'></script>
+		<script type='text/javascript' th:src='@{/js/common.js}'></script>
+	</head>
+	<body class="home blog custom-background fullwidth ie-shortcodes  ie-shortcodes-responsive group-blog">
+		
+		<div id="page" class="hfeed site layout-fullwidth">
+
+			<div th:replace="~{commons/commons::hea}"></div>
+			<div id="site-content" class="site-content">
+				<div class="container">
+					<div class="row">
+						<div class="content-area posts-loop full-width-layout col-md-12" id="primary">
+							<main id="main" class="site-main row big-posts">
+								<div  class="masonry-item big-item col-md-12 col-sm-12 col-xs-12">
+
+									<div th:replace="~{commons/commons::manage}"></div>
+									<div id="post-2202" style="width: 800px;float: left;padding: 15px;">
+										<div class="styled">
+											<h2>私人空间</h2>
+											<hr />
+											<article class="styled" th:each="editor:${session.editor}">
+												<header class="entry-header">
+													<a  th:href="@{/news(num=${editor.getNews_num()})}">
+														<figure style="width: 250px;height:138px;" class="post-image animated-overlay overlay-alt">
+															<img  width="100%" height="100%" class="lazyload" th:src="@{${editor.getNews_pic()}}" alt="" />
+															<figcaption>
+															</figcaption>
+														</figure>
+													</a>
+												</header>
+												<div class="entry-content">
+													<div class="post-heading">
+														<h3 class="entry-title"><a th:href="@{/news(num=${editor.getNews_num()})}" rel="bookmark" th:text="${editor.getNews_head()}" ></a></h3>
+														<ul class="post-meta entry-meta">
+															<li class="author">作者：<span th:text="${session.user.getUser_name()}"></span></li>
+															<li th:text="'上一次编辑时间:'+ ${editor.getNews_date()}"></li>
+															<li class="author">分类：<span th:text="${editor.getNews_ify()}"></span></li>
+															<li><a th:href="@{/updateNews(num=${editor.getNews_num()})}">编辑</a></li>
+															<li><a th:href="@{/deleteNews(num=${editor.getNews_num()})}">删除</a></li>
+														</ul>
+													</div>
+													<div class="post-excerpt">
+														<p class="note" th:text="${#strings.abbreviate(editor.getNews_text(),100)}"></p>
+												</div>
+												</div>
+											</article>
+											<h2>社区文章</h2>
+											<hr />
+											<article class="styled"  th:each="publish:${session.publish}">
+												<header class="entry-header">
+													<a  th:href="@{/news(num=${publish.getNews_num()})}">
+														<figure style="width: 250px;height:138px;" class="post-image animated-overlay overlay-alt">
+															<img width="100%" height="100%" class="lazyload" th:src="@{${publish.getNews_pic()}}" alt="" />
+															<figcaption>
+															</figcaption>
+														</figure>
+													</a>
+												</header>
+												<div class="entry-content">
+													<div class="post-heading">
+														<h3 class="entry-title"><a th:href="@{/news(num=${publish.getNews_num()})}" rel="bookmark" th:text="${publish.getNews_head()}" ></a></h3>
+														<ul class="post-meta entry-meta">
+															<li class="author">作者：<span th:text="${session.user.getUser_name()}"></span></li>
+															<li th:text="'上一次编辑时间:'+ ${publish.getNews_date()}" ></li>
+															<li class="author">分类：<span  th:text="${publish.getNews_ify()}"></span></li>
+															<li><a th:href="@{/updateNews(num=${publish.getNews_num()})}">编辑</a></li>
+															<li><a th:href="@{/deleteNews(num=${publish.getNews_num()})}">删除</a></li>
+														</ul>
+													</div>
+													<div class="post-excerpt">
+														<p class="note" th:text="${#strings.abbreviate(publish.getNews_text(),100)}"></p>
+													</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</main>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div th:replace="~{commons/commons::footer}"></div>
+			
+		</div>
+	</body>
+</html>

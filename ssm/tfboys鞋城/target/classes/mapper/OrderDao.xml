@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cm.dao.OrderDao">
+    <insert id="insert">
+        insert into `order` values (#{id},#{buyerId},#{registrationDate},#{goodsId},#{amount},#{sum},#{size},#{status},#{addressId})
+    </insert>
+
+    <select id="list" resultType="com.cm.vo.OrderVo">
+        select o.id,
+        g.img_url 'imgUrl',
+        g.name,
+        o.size,
+        o.sum 'money',
+        o.amount,
+        o.status,
+        a.address
+        from `order` o
+        left join `address` a on a.id = o.address_id
+        left join `goods` g on o.goods_id = g.id
+        where o.buyer_id = #{id}
+    </select>
+
+    <select id="listAdminOrder" resultType="com.cm.vo.OrderVo">
+        select o.id,
+        g.img_url 'imgUrl',
+        g.name,
+        o.size,
+        o.sum 'money',
+        o.amount,
+        o.status,
+        a.address
+        from `order` o
+        left join `address` a on a.id = o.address_id
+        left join `goods` g on o.goods_id = g.id
+        where g.seller_id = #{id}
+    </select>
+
+
+    <update id="updateStatus">
+        update `order` set `status`=#{status} where id = #{id}
+    </update>
+</mapper>

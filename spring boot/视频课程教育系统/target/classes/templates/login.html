@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>登录</title>
+
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+
+<body style="background-color: #dfd8e8;">
+<form id="item" th:action="@{/toIndex}">
+	<div class="container">
+		<div class="row">
+			<aside class="col-sm-4" style="margin: auto">
+				<div class="card" style="margin-top: 80px;">
+					<article class="card-body">
+						<a th:href="@{/registered}" class="float-right btn btn-outline-primary">Sign up</a>
+						<h4 class="card-title mb-4 mt-1">Sign in</h4>
+						<form>
+							<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+							<div class="form-group">
+								<label>Your number</label>
+								<input th:value="${session.username}"  name="user_num" class="form-control" type="text" id="user_num" required>
+							</div> <!-- form-group// -->
+
+							<div class="form-group">
+								<a class="float-right" href="#">Forgot?</a>
+								<label>Your password</label>
+								<input th:value="${session.password}" name="user_password" class="form-control" type="password" id="user_password" required>
+							</div> <!-- form-group// -->
+
+							<div class="form-group">
+								<div class="checkbox">
+									<label> <input type="checkbox"> Save password </label>
+								</div> <!-- checkbox .// -->
+							</div> <!-- form-group// -->
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block"> Login  </button>
+							</div> <!-- form-group// -->
+						</form>
+					</article>
+				</div>
+			</aside>
+		</div>
+	</div>
+</form>
+</body>
+</html>

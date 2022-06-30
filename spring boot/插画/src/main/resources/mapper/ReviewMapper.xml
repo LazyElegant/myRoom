@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.ReviewMapper">
+
+    <insert id="insertReview">
+		insert into `review`
+		values(#{id},#{userId},#{ikonId},#{context},#{reviewTime});
+	</insert>
+
+    <select id="listByIkonId" resultType="com.bobo.test.vo.ReviewVo">
+		SELECT r.id,
+			r.context,
+			u.`name` `userName`,
+			r.review_time 'reviewTime',
+			u.pic
+        FROM `review` r
+        LEFT JOIN `user` u ON r.user_id = u.id
+        WHERE r.ikon_id = #{ikonId}
+	</select>
+</mapper>

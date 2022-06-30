@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <div id="masthead" th:fragment="hea" class="hea">
+        <div class="visible-lg visible-md site-header normal-header header-one">
+            <div class="nav-section">
+                <div class="container">
+                    <div class="nav-section-wrap">
+                        <div class="site-navigation">
+                            <nav id="main-navigation" class="main-navigation">
+                                <div class="menu-menu-1-container">
+                                    <ul id="primary-menu" class="menu">
+                                        <li><a th:href="@{/}">首页</a></li>
+                                        </ul>
+                                </div>
+
+                            </nav>
+
+                        </div>
+
+                        <div class="nav-icons pull-right">
+                            <div class="header-search"> <a href="#" style="width: 30px;" class="header-search-trigger" title="搜索本站">搜索</a>
+                                <div class="header-search-wrapper">
+                                    <form method="get" class="search-form" th:action="@{/classify/seek}">
+                                        <input type="search" class="search-field" placeholder="请输入您搜索的关键字" value="" name="title" data-swplive="true" /></form>
+                                </div>
+                            </div>
+                        </div>
+                        <div th:if="${#strings.isEmpty(session.user)}" class="nav-icons pull-right">
+                            <a th:href="@{/toLogin}">登录</a>
+                        </div>
+                        <div th:if="${#strings.isEmpty(session.user)}" class="nav-icons pull-right">
+                            <a th:href="@{/toRegistered}">注册</a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user)}" class="nav-icons pull-right">
+                            <a th:href="@{/OutLogin}">注销</a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user)}" class="nav-icons pull-right">
+                            <img style="width: 30px;height: 30px;border-radius: 50%" th:src="${session.user.getPic()}">
+
+                            <a th:href="@{/toPersonal}" th:text=" ${session.user.getName()} +'(' + ${session.user.getStatus()} + ')'"></a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user) && session.user.getStatus() == '管理员'}" class="nav-icons pull-right">
+                            <a th:href="@{/painterManage}">管理站点</a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user) && session.user.getStatus() == '画师' && session.user.getPainterId() != null}" class="nav-icons pull-right">
+                            <a th:href="@{/postIkon}">发布画作</a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user) && session.user.getPainterId() == null && session.user.getStatus() != '画师' && session.user.getStatus() != '管理员' }" class="nav-icons pull-right">
+                            <a href="#" id="RegistrationPainter">注册画师</a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user)}" class="nav-icons pull-right">
+                            <a th:href="@{/classify/ifyByConcern}">关注的画师</a>
+                        </div>
+                        <div th:if="${!#strings.isEmpty(session.user)}" class="nav-icons pull-right">
+                            <a th:href="@{/classify/ifyByCollect}">收藏的画作</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:fragment="ify" class="kuai">
+        <div class="menus" th:each="classes:${session.classify}"><a  th:href="@{/classify/ify(id=${classes.getId()})}" th:text="${classes.getName()}"></a></div>
+    </div>
+
+    <div th:fragment="footer" class="footer site-footer footer-one">
+        <div class="footer-bottom">
+            <div class="container">
+                <nav class="footer-navigation">
+                    <ul id="footer-menu" class="menu">
+                        <li id="menu-item-2325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2325"><a
+                                target="_blank" rel="noopener noreferrer" href="#">友情链接</a></li>
+                        <li id="menu-item-3557" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3557"><a
+                                target="_blank" rel="noopener noreferrer" href="#">校园招生</a></li>
+                        <li id="menu-item-3551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3551"><a
+                                target="_blank" rel="noopener noreferrer" href="#">打赏</a></li>
+                        <li id="menu-item-2428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-2428"><a
+                                target="_blank" rel="noope ner noreferrer" href="#">隐私条例</a></li>
+                    </ul>
+                </nav>
+                <div class="copyright-text"> www.bobo.com 2021 - All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="manage" class="manage" style="width: 250px;padding: 15px;float: left;">
+
+        <header class="entry-header styled">
+            <a th:href="@{/painterManage}">
+                <h1>
+                    画师管理
+                </h1>
+            </a>
+        </header>
+        <header class="entry-header styled">
+            <a th:href="@{/adminIkonManage}">
+                <h1>
+                    插画管理
+                </h1>
+            </a>
+        </header>
+        <header class="entry-header styled">
+            <a th:href="@{/classify}">
+                <h1>
+                    插画类型管理
+                </h1>
+            </a>
+        </header>
+
+    </div>
+
+</html>

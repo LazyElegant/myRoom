@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.test.mapper.forumMapper">
+
+    <select id="queryForumById" parameterType="int" resultType="forum">
+        select * from forum where id = #{id}
+    </select>
+
+    <select id="queryForumByUserId" parameterType="int" resultType="forum">
+        select * from forum where user_id = #{id}
+    </select>
+
+    <select id="queryForumAll"  resultType="forum">
+        select * from forum
+    </select>
+
+    <insert id="addForum" parameterType="forum">
+        insert into forum
+        values(#{id},#{title},#{content},#{user_id},#{creation_time});
+    </insert>
+
+    <delete id="deleteForum">
+        delete from forum where id = #{id};
+    </delete>
+</mapper>
