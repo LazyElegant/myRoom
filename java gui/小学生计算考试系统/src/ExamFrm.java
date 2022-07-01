@@ -14,7 +14,7 @@ public class ExamFrm {
 
     public static void show() {
         JFrame frame = new JFrame("小学生计算考试系统");
-        frame.setSize(600, 620);
+        frame.setSize(700, 620);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         frame.add(panel);
@@ -22,11 +22,10 @@ public class ExamFrm {
         CardLayout cardLayout = new CardLayout();
 
         panel.setLayout(cardLayout);
-
+        //循环生成10张卡片
         for (int i = 0; i < 10; i++) {
-
             JPanel p3 = new JPanel();
-            placeComponents(p3);
+            placeComponents(p3,i+1);
             panel.add(p3);
         }
 
@@ -55,19 +54,26 @@ public class ExamFrm {
                 cardLayout.last(panel);
             }
         });
+        Timer timer = new Timer();
+        // 考试时间 60秒乘以登录页面记录的考试时间
+        final long[] time = {60 * LoginFrm.examTime};
+
         JButton b5 = new JButton("提前交卷");
         b5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                //确认框
                 if (JOptionPane.showConfirmDialog(null,"是否确认提前交卷")!=0) {
                     return;
                 }
                 int score = getScore();
-                JOptionPane.showMessageDialog(frame, "考试结束，考试结果为："+score, "考试结束", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "考试结束，考试结果为："+score+"，所用时间为："+(LoginFrm.examTime*60-time[0])+"秒", "考试结束", JOptionPane.PLAIN_MESSAGE);
 
+                INDEX =0;
+                RE = new int[100];
+                EQUATION = new String[100];
+                RESULT = new JTextField[100];
                 LoginFrm.frame.setVisible(true);
                 frame.dispose();
-
-
             }
         });
         p2.add(b1);
@@ -80,10 +86,7 @@ public class ExamFrm {
 
         Panel p3 = new Panel();
 
-        JLabel label = new JLabel("01:00:00");
-        Timer timer = new Timer();
-        final long[] time = {60 * LoginFrm.examTime};
-
+        JLabel label = new JLabel();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -93,10 +96,14 @@ public class ExamFrm {
                 long seconds= time[0] -hour*3600-minute*60;
                 label.setText(hour+":"+minute+":"+seconds);
                 p3.add(label);
+                //当考试时间小于等于0时结束考试
                 if(time[0]<=0){
                     int score = getScore();
-                    JOptionPane.showMessageDialog(frame, "时间到，考试结束，考试结果为："+score, "考试结束", JOptionPane.PLAIN_MESSAGE);
-
+                    JOptionPane.showMessageDialog(frame, "时间到，考试结束，考试结果为："+score+"，所用时间为："+LoginFrm.examTime*60+"秒", "考试结束", JOptionPane.PLAIN_MESSAGE);
+                    INDEX =0;
+                    RE = new int[100];
+                    EQUATION = new String[100];
+                    RESULT = new JTextField[100];
                     LoginFrm.frame.setVisible(true);
                     frame.dispose();
                     timer.cancel();
@@ -107,50 +114,83 @@ public class ExamFrm {
         frame.add(p3,BorderLayout.BEFORE_FIRST_LINE);
         frame.setVisible(true);
     }
-    private static void placeComponents(JPanel panel) {
+    private static void placeComponents(JPanel panel,int l) {
+        //生成10道题
         for (int i =1;i<=10;i++ ){
+            //随机生成3个数
+            int rm_1 = (int)(Math.random()*100+1);
+            int rm_2 = (int)(Math.random()*100+1);
+            int rm_3 = (int)(Math.random()*100+1);
+
+            //随机选择加法和减法
+            int k = (int) (Math.random() * 2 + 1);
+            int k2 = (int) (Math.random() * 2 + 1);
+
             panel.setLayout(null);
+            // 题号
             JLabel inx = new JLabel(INDEX+1 +" :");
             inx.setBounds(20,40*i,35,25);
             panel.add(inx);
+            //最左边的数
             JTextField left = new JTextField(20);
             left.setBounds(80,40*i,85,25);
             left.setFocusable(false);
-            int rm_1 = (int)(Math.random()*100+1);
-            int rm_2 = (int)(Math.random()*100+1);
             Color c=new Color(243, 239, 239);
             left.setBackground(c);
             panel.add(left);
-            int k = (int) (Math.random() * 2 + 1);
+            // 第一个符号
             JLabel symbol = new JLabel(getFH(k));
             symbol.setBounds(180,40*i,35,25);
             panel.add(symbol);
+            //中间的数
             JTextField right = new JTextField(20);
             right.setBounds(210,40*i,85,25);
             right.setFocusable(false);
             right.setBackground(c);
             panel.add(right);
+            //第二个符号
+            JLabel symbol2 = new JLabel(getFH(k2));
+            symbol2.setBounds(310,40*i,35,25);
+            panel.add(symbol2);
+            //最右边的数
+            JTextField right2 = new JTextField(20);
+            right2.setBounds(340,40*i,85,25);
+            right2.setFocusable(false);
+            right2.setBackground(c);
+            panel.add(right2);
             JLabel equal = new JLabel("=");
-            equal.setBounds(315,40*i,35,25);
+            equal.setBounds(430,40*i,35,25);
             panel.add(equal);
             JTextField result = new JTextField(20);
-            result.setBounds(340,40*i,155,25);
+            result.setBounds(470,40*i,155,25);
             panel.add(result);
+
+            //确保减法时左边的数大于右边的数
             if(rm_1<rm_2){
                 int tem = rm_1;
                 rm_1 = rm_2;
                 rm_2 = tem;
             }
+            //确保减法时rm_3小于rm_1与rm_2相减
+            if (rm_3>rm_1-rm_2 && k2==2){
+                rm_3=(int)(Math.random()*(rm_1-rm_2)+1);
+            }
+
             left.setText(rm_1+"");
             right.setText(rm_2+"");
-            RE[INDEX] = calculation(rm_1,rm_2,k);
+            right2.setText(rm_3+"");
+            RE[INDEX] =  calculation(calculation(rm_1,rm_2,k),rm_3,k2);
             RESULT[INDEX] = result;
-            EQUATION[INDEX] = rm_1 + getFH(k) + rm_2 + "=";
+            EQUATION[INDEX] = rm_1 + getFH(k) + rm_2 + getFH(k2)+rm_3+ "=";
 
             INDEX++;
         }
+        JLabel page = new JLabel(l+"/10");
+        page.setBounds(310,460,60,25);
+        page.setFont(new Font("宋体", Font.PLAIN, 18));
+        panel.add(page);
     }
-
+    //获取符号
     private static String getFH(int k) {
         String str="";
         switch(k) {
@@ -162,6 +202,7 @@ public class ExamFrm {
         return str;
     }
 
+    //计算
     private static int calculation(int a, int b, int k){
         int sum=0;
         switch(k) {
@@ -173,6 +214,7 @@ public class ExamFrm {
         return sum;
     }
 
+    //输出成绩
     private static int getScore(){
         int score = 0;
         Tool.writeFile("学号："+LoginFrm.number+"，姓名："+LoginFrm.name+"，班级："+LoginFrm.stuClass,LoginFrm.name+"的错题集.txt");
