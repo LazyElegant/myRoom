@@ -1,0 +1,137 @@
+body {
+    line-height: 1.6;
+    color: #333;
+    color: rgba(0,0,0,.85);
+    font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, input, button, textarea, p, blockquote, th, td, form, pre {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.clearfix {
+    position: relative;
+}
+.mauto {
+    margin: 0 auto;
+}
+#left_nav {
+    width: 236px;
+    float: left;
+    margin-top: 30px;
+}
+#Model {
+    width: 907px;
+    min-height: 559px;
+    margin-top: 30px;
+}
+.fl-right {
+    float: right;
+}
+ul li {
+    list-style: none;
+}
+#left_nav>li.c_menu a.choosed {
+    color: #8B3734;
+    border-left: 3px solid #8B3734;
+    height: 60px;
+}
+
+#left_nav>li.c_menu a {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 50px;
+    color: #666;
+    font-size: 16px;
+    display: block;
+}
+.bgfff {
+    background-color: #fff;
+}
+.submit:hover {
+    background: #181616;
+    color: #fff;
+    cursor: pointer;
+}
+
+.submit {
+    background: #FC5A5A;
+    color: #fff;
+    padding: 16px 25px;
+    width: 250px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    border: 0;
+    overflow: hidden;
+}
+.nav {
+    height: 90px;
+    border-bottom: 2px solid #b1191a;
+    background-color: white;
+}
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav .navitems {
+    float: left;
+}
+.navitems ul li {
+    float: left;
+}
+.cb {
+    display: inline;
+    position: absolute;
+    left: 15%;
+}
+.sq {
+    display: inline;
+    position: absolute;
+    left: 33%;
+}
+.wd {
+    display: inline;
+    position: absolute;
+    left: 50%;
+}
+.my {
+    display: inline;
+    position: absolute;
+    left: 68%;
+}
+.sd {
+     display: inline;
+     position: absolute;
+     left: 80%;
+ }
+.navitems ul li a {
+    display: block;
+    height: 87px;
+    line-height: 91px;
+    font-size: 16px;
+    padding: 0 25px;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+.order_table {
+
+    border: 1px solid #EBEBEB;
+    margin-top: 15px;
+}
+.order_table td {
+    vertical-align: middle;
+    text-align: center;
+}
+.layui-form {
+    height: 40px;
+}
