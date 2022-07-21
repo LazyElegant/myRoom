@@ -70,6 +70,7 @@
 						<p>${list.getElectricBalance()}</p>
 					</td>
 					<td class="goods_money" width="450">
+						<input class="sc" id="${list.getUserId()}" type="submit" value="删除">
 					</td>
 				</tr>
 			</c:forEach>
@@ -84,5 +85,14 @@
 	$("#cx").click(function () {
 		document.location.href =   "${request.getContextPath()}/getBalance?name="+ $("#BalanceName").val();
 	})
+
+	$(".sc").click(function () {
+		var r =confirm("您确定删除该账户吗？")
+		if(r){
+			document.location.href =   "${request.getContextPath()}/deleteUser?id="+ this.id;
+		}
+
+	})
+
 </script>
 </html>

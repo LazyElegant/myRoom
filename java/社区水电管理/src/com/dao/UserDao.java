@@ -60,4 +60,24 @@ public class UserDao  {
 		}
 		return ptst.executeUpdate();
 	}
+	public static int delete(Integer id) throws SQLException {
+
+		String sql = "delete FROM `user` where id = ?" ;
+		Connection con = DbUtil.getCon();
+		PreparedStatement ptst = null;
+		try {
+			ptst = con.prepareStatement(sql);
+			ptst.setInt(1,id);
+			ptst.executeUpdate();
+			ptst = con.prepareStatement("delete FROM `bill` where user_id = ?");
+			ptst.setInt(1,id);
+			ptst.executeUpdate();
+			ptst = con.prepareStatement("delete FROM `balance` where user_id = ?");
+			ptst.setInt(1,id);
+			ptst.executeUpdate();
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
+		}
+		return ptst.executeUpdate();
+	}
 }

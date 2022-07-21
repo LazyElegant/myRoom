@@ -27,7 +27,7 @@ public class BalanceDao {
     }
     public static ArrayList<BalanceVo> list(){
         String sql = "select u.id,u.username,b.water_balance,b.electric_balance from `user` u " +
-                "LEFT JOIN `balance` b on b.user_id = u.id" ;
+                "LEFT JOIN `balance` b on b.user_id = u.id where u.state = 1" ;
         Connection con = DbUtil.getCon();
         PreparedStatement ptst = null;
         ArrayList<BalanceVo> list= null;
