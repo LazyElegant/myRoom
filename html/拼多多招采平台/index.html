@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/pdd.css"  />
+	</head>
+	<body>
+		<div class="head">
+			<div class="nav">
+				<a href="#">
+					<img src="img/pdd_logo_v2.png" />
+				</a>
+				<ul class="log">
+					<li class="first"><a href="#">首页</a></li>
+					<li><a href="#">商家入驻</a></li>
+					<li><a href="#">热点资讯</a></li>
+					<li><a href="#">社会招聘</a></li>
+					<li><a href="#">校园招聘</a></li>
+					<li><a class="active" href="#">招采平台</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li><a href="#">举报平台</a></li>
+					<li><a href="#">分享赚钱</a></li>
+				</ul>
+			</div>
+			
+		</div>
+	
+		<div class="lun">
+			<div class="txt">
+				<div class="ex"> 
+					<h1>拼多多商务合作</h1>
+					<div class="line"></div>
+					<div class="zu">
+						<span>廉洁公正</span>
+						<div class="dot"></div>
+						<span>公开透明</span>
+						<div class="dot"></div>
+						<span>阳光采购</span>
+					</div>
+				</div>
+			</div>
+		
+			<div class="login">
+				<div class="main" style="display: block;">
+					<div class="top">
+						<span class="title">登录</span>
+						<div class="qh">
+							<span class="active tap" id="mobile" onclick="sjdl()">手机验证码登录</span>
+							<div class="gan"></div>
+							<span class="tap" id="num" onclick="zhdl()">账号登录</span>
+						</div>
+					</div>
+					<div id="form">							
+						<form id="sj" style="display: block;">
+							<select class="form-item select">
+								<option>+86 中国大陆</option>
+								<option>+852 中国香港</option>
+								<option>+853 中国澳门</option>
+								<option>+886 中国台湾</option>
+							</select>
+							<input class="form-item" placeholder="输入手机号码" height="100%" autocomplete="off" value="">
+							<input class="form-item" placeholder="输入验证码" height="100%" autocomplete="off" value="">
+							<button type="button" class="chris-btn-primary">登录</button>
+						</form>	
+						<form id="zh" style="display: none;">
+							<input class="form-item" placeholder="输入账户名" height="100%" autocomplete="off" value="">
+							<input class="form-item" placeholder="输入密码" height="100%" autocomplete="off" value="">
+							<input class="form-item" placeholder="输入右侧验证码" height="100%" autocomplete="off" value="" style="width: 67%;"><img style="width: 25%;" src="img/yzm.png" />
+							<button type="button" class="chris-btn-primary">登录</button>
+						</form>
+					</div>
+					<span class="ljzc">立即注册</span>
+					<span class="wjmm">忘记密码</span>
+				</div>
+			</div>
+		</div>
+	
+		<div class="content">
+			<div class="top">
+				<div>
+					<div class="fous">
+						<h2>采购公告</h2>
+						<span class="more">查看更多</span>
+					</div>
+					<div class="line"></div>
+					<div class="xia"></div>
+				</div>
+				<div>
+					<div class="fous">
+						<h2>招标公告</h2>
+						<span class="more">查看更多</span>
+					</div>
+					<div class="line"></div>
+					<div class="xia"></div>
+				</div>
+			</div>
+			<div class="cards">
+				<div class="card">
+					<div class="card-body">
+						<div class="card-item">
+							<span class="dot"></span>
+							<p class="text">拼多多员工餐供餐项目供应商寻源</p>
+							<span class="date">2022-06-16</span>
+						</div>
+						<div class="card-item">
+							<span class="dot"></span>
+							<p class="text">拼多多招采信息平台使用手册V1.0</p>
+							<span class="date">2020-06-24</span>
+						</div>
+						<div class="card-item">
+							<span class="dot"></span>
+							<p class="text">拼多多采购"廉正"告知书</p>
+							<span class="date">2020-06-04</span>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<div class="card-item">
+							<span class="dot"></span>
+							<p class="text">多多买菜-吉林省服务站/网格仓火爆招商</p>
+							<span class="date">2021-11-05</span>
+						</div>
+						<div class="card-item">
+							<span class="dot"></span>
+							<p class="text">【多多买菜-粤东 区域】网格仓/服务站招标</p>
+							<span class="date">2021-11-01</span>
+						</div>
+						<div class="card-item">
+							<span class="dot"></span>
+							<p class="text">多多买菜网格仓/服务站招标书</p>
+							<span class="date">2021-10-28</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="hz">
+			<div class="container">
+				<div class="top">
+					<h2>供应商合作流程</h2>
+				</div>
+				<div class="line"></div>
+				<div class="xia"></div>
+				<div class="lc">
+					<div class="cx">
+						<img src="img/register-account.png">
+						<span>注册账号</span>
+					</div>
+					<div class="shan"></div>
+					<div class="cx">
+						<img src="img/add-company-info.png">
+						<span>添加公司信息</span>
+					</div>
+					<div class="shan"></div>
+					<div class="cx">
+						<img src="img/apply.png">
+						<span>申请资质</span>
+					</div>
+					<div class="shan"></div>
+					<div class="cx">
+						<img src="img/tender.png">
+						<span>发起投标</span>
+					</div>
+					<div class="shan"></div>
+					<div class="cx">
+						<img src="img/revenue-info.png">
+						<span>填写收款信息</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<p>Copyright 2015-2022 pinduoduo.com 版权所有(沪ICP备15010535号)</p>
+			<p>联系我们：邮箱 purchase@pinduoduo.com丨电话 021-62110529， 联系时间 09:00-12:00,13:30-20:00</p>
+		</div>
+	</body>
+	<script>
+		function zhdl(){
+			document.getElementById('zh').style.display ="block";
+			document.getElementById('mobile').classList.remove("active")
+			document.getElementById('sj').style.display ="none";
+			document.getElementById('num').classList.add("active")
+		}
+		function sjdl(){
+			document.getElementById('zh').style.display ="none";
+			document.getElementById('num').classList.remove("active")
+			document.getElementById('sj').style.display ="block";
+			document.getElementById('mobile').classList.add("active")
+		}
+	</script>
+</html>

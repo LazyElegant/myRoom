@@ -1,0 +1,53 @@
+/* stylize at least text and range slider in HTML (10pts)
+ */
+.name{
+	text-align:  center;
+	color: green;
+}
+
+.rule{
+	color: blue;
+	margin-left: 550px;
+	font-size: 18px;
+}
+
+canvas{
+	border: black 1px solid;
+	padding: 2px;
+	margin-left: 350px;
+}
+
+.buttons{
+	width: 54%;
+	margin:0px 23%;
+	
+}
+
+.buttons button{
+	float: right;
+	margin: 5px 5px 0 0 ;
+}
+
+.active{
+	background-color: #000000;
+	color: white;
+}
+.colors{
+	width: 54%;
+	margin:0px 23%;
+}
+.slider{
+	width: 54%;
+	margin:15px 23%;
+}
+input[type="range"]{
+	-webkit-appearance: none; 
+	width: 89%;
+	background-color: #dcdcdc;
+	cursor: pointer;
+	height: 22px;
+	border-radius: 10px;
+}
+.slider .value{
+	text-align: center;
+}

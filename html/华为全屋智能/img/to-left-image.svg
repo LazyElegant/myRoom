@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="94" height="94" viewBox="0 0 94 94">
+  <defs>
+    <filter id="路径_4813" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <path id="路径_4820" data-name="路径 4820" d="M2112.53-264.531a.751.751,0,0,1,0,1.061.75.75,0,0,1-1.061,0l-8-7.987a.751.751,0,0,1,0-1.061l8-8.012a.75.75,0,0,1,1.061,0,.751.751,0,0,1,0,1.061l-7.47,7.482Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="路径_4819" data-name="路径 4819" d="M2096-260h24v-24h-24Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="矩形_5698" data-name="矩形 5698" width="24" height="28" transform="translate(2096 -286)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="路径_4815" data-name="路径 4815" d="M2103-263h10v-18h-10Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="路径_4818" data-name="路径 4818" d="M2120-284h-24v24h24Z" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g id="组_10037" data-name="组 10037" transform="translate(-38 -451)">
+    <g transform="matrix(1, 0, 0, 1, 38, 451)" filter="url(#路径_4813)">
+      <path id="路径_4813-2" data-name="路径 4813" d="M2108-240a32,32,0,0,1-32-32,32,32,0,0,1,32-32,32,32,0,0,1,32,32A32,32,0,0,1,2108-240Z" transform="translate(-2066 314)" fill="#f4f4f4" fill-rule="evenodd"/>
+    </g>
+    <g id="组_10034" data-name="组 10034" transform="translate(-2028 765)" clip-path="url(#clip-path)">
+      <g id="组_10033" data-name="组 10033" clip-path="url(#clip-path-2)">
+        <g id="组_10032" data-name="组 10032" style="isolation: isolate">
+          <g id="组_10031" data-name="组 10031" clip-path="url(#clip-path-3)">
+            <g id="组_10028" data-name="组 10028" clip-path="url(#clip-path-4)">
+              <path id="路径_4814" data-name="路径 4814" d="M2098.25-258.25h19.5v-27.5h-19.5Z"/>
+            </g>
+            <g id="组_10030" data-name="组 10030" clip-path="url(#clip-path-5)">
+              <g id="组_10029" data-name="组 10029" clip-path="url(#clip-path-4)">
+                <path id="路径_4816" data-name="路径 4816" d="M2091-255h34v-34h-34Z"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

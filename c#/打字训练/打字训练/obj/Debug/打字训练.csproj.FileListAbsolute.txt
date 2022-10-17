@@ -1,0 +1,11 @@
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.csprojAssemblyReference.cache
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.Form1.resources
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.Form2.resources
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.Properties.Resources.resources
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.csproj.GenerateResource.cache
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.csproj.CoreCompileInputs.cache
+E:\开发文档\vb.net\打字训练\打字训练\bin\Debug\打字训练.exe.config
+E:\开发文档\vb.net\打字训练\打字训练\bin\Debug\打字训练.exe
+E:\开发文档\vb.net\打字训练\打字训练\bin\Debug\打字训练.pdb
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.exe
+E:\开发文档\vb.net\打字训练\打字训练\obj\Debug\打字训练.pdb

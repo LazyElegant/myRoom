@@ -1,0 +1,127 @@
+Private Sub CommandButton1_Click()
+    Set sht = Worksheets("sheet1")
+    With sht
+        
+        For i = 2 To .Range("A65536").End(xlUp).Row
+            
+            Dim path As String
+            path = .Range("C" & i).Text
+            If Dir(path) <> "" Then
+                .Pictures.Insert(path).Select
+                Set Rng = .Cells(i, 3)               '设置要放图片的单元格
+                
+                With Selection                      '选中单元格与刚放置的图片
+                .ShapeRange.LockAspectRatio = msoFalse
+                    .Top = Rng.Top + 1              '顶边距
+                    .Left = Rng.Left + 1            '左边距
+                    .Width = 150
+                    .Height = 150
+                End With
+                
+                Range("C" & i).Value = ""
+                .Range("C" & i).RowHeight = 150
+                .Range("C" & i).ColumnWidth = 25
+                
+                
+            End If
+            path = .Range("D" & i).Text
+            If Dir(path) <> "" Then
+                .Pictures.Insert(path).Select
+                Set Rng = .Cells(i, 4)               '设置要放图片的单元格
+                
+                With Selection                      '选中单元格与刚放置的图片
+                .ShapeRange.LockAspectRatio = msoFalse
+                    .Top = Rng.Top + 1              '顶边距
+                    .Left = Rng.Left + 1            '左边距
+                    .Width = 150
+                    .Height = 150
+                End With
+                
+                Range("D" & i).Value = ""
+                .Range("D" & i).RowHeight = 150
+                .Range("D" & i).ColumnWidth = 25
+                
+                
+            End If
+            path = .Range("E" & i).Text
+            If Dir(path) <> "" Then
+                .Pictures.Insert(path).Select
+                Set Rng = .Cells(i, 5)               '设置要放图片的单元格
+                
+                With Selection                      '选中单元格与刚放置的图片
+                .ShapeRange.LockAspectRatio = msoFalse
+                    .Top = Rng.Top + 1              '顶边距
+                    .Left = Rng.Left + 1            '左边距
+                    .Width = 150
+                    .Height = 150
+                End With
+                
+                Range("E" & i).Value = ""
+                .Range("E" & i).RowHeight = 150
+                .Range("E" & i).ColumnWidth = 25
+                
+                
+            End If
+            path = .Range("F" & i).Text
+            If Dir(path) <> "" Then
+                .Pictures.Insert(path).Select
+                Set Rng = .Cells(i, 6)               '设置要放图片的单元格
+                
+                With Selection                      '选中单元格与刚放置的图片
+                .ShapeRange.LockAspectRatio = msoFalse
+                    .Top = Rng.Top + 1              '顶边距
+                    .Left = Rng.Left + 1            '左边距
+                    .Width = 150
+                    .Height = 150
+                End With
+                
+                Range("F" & i).Value = ""
+                .Range("F" & i).RowHeight = 150
+                .Range("F" & i).ColumnWidth = 25
+                
+                
+            End If
+            path = .Range("G" & i).Text
+            If Dir(path) <> "" Then
+                .Pictures.Insert(path).Select
+                Set Rng = .Cells(i, 7)              '设置要放图片的单元格
+                
+                With Selection                      '选中单元格与刚放置的图片
+                .ShapeRange.LockAspectRatio = msoFalse
+                    .Top = Rng.Top + 1              '顶边距
+                    .Left = Rng.Left + 1            '左边距
+                    .Width = 150
+                    .Height = 150
+                End With
+                
+                Range("G" & i).Value = ""
+                .Range("G" & i).RowHeight = 150
+                .Range("G" & i).ColumnWidth = 25
+                
+                
+            End If
+            path = .Range("H" & i).Text
+            If Dir(path) <> "" Then
+                .Pictures.Insert(path).Select
+                Set Rng = .Cells(i, 8)             '设置要放图片的单元格
+                
+                With Selection                      '选中单元格与刚放置的图片
+                .ShapeRange.LockAspectRatio = msoFalse
+                    .Top = Rng.Top + 1              '顶边距
+                    .Left = Rng.Left + 1            '左边距
+                    .Width = 150
+                    .Height = 150
+                End With
+                
+                Range("H" & i).Value = ""
+                .Range("H" & i).RowHeight = 150
+                .Range("H" & i).ColumnWidth = 25
+                
+                
+            End If
+        Next i
+    End With
+    
+End Sub
+
+
