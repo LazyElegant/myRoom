@@ -1,0 +1,39 @@
+.name{
+	text-align:  center;
+	color: green;
+}
+
+.rule{
+	color: blue;
+	margin-left: 550px;
+	font-size: 18px;
+}
+
+canvas{
+	border: black 1px solid;
+	padding: 2px;
+	margin-left: 150px;
+}
+
+.buttons{
+	margin-top: 30px;
+}
+.selectColor ,.buttons ,.selectShape{
+	width: 100%;
+	text-align: center;
+}
+.slider{
+	width: 54%;
+	margin:15px 23%;
+}
+input[type="range"]{
+	-webkit-appearance: none; 
+	width: 89%;
+	background-color: #dcdcdc;
+	cursor: pointer;
+	height: 22px;
+	border-radius: 10px;
+}
+.slider .value{
+	text-align: center;
+}
