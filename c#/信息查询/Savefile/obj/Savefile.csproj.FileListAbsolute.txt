@@ -1,0 +1,54 @@
+F:\编程实习\Savefile\Savefile\obj\Debug\Savefile.exe
+F:\编程实习\Savefile\Savefile\obj\Debug\Savefile.pdb
+F:\编程实习\Savefile\Savefile\bin\Debug\Savefile.exe
+F:\编程实习\Savefile\Savefile\bin\Debug\Savefile.pdb
+F:\编程实习\Savefile\Savefile\obj\Debug\ResolveAssemblyReference.cache
+F:\编程实习\Savefile\Savefile\obj\Debug\Savefile.Form1.resources
+F:\编程实习\Savefile\Savefile\obj\Debug\Savefile.Properties.Resources.resources
+F:\编程实习\Savefile\Savefile\obj\Debug\Savefile.csproj.GenerateResource.Cache
+G:\编程实习\Savefile\Savefile\obj\Debug\Savefile.exe
+G:\编程实习\Savefile\Savefile\obj\Debug\Savefile.pdb
+G:\编程实习\Savefile\Savefile\bin\Debug\Savefile.exe
+G:\编程实习\Savefile\Savefile\bin\Debug\Savefile.pdb
+G:\编程实习\Savefile\Savefile\obj\Debug\ResolveAssemblyReference.cache
+G:\编程实习\Savefile\Savefile\obj\Debug\Savefile.Form1.resources
+G:\编程实习\Savefile\Savefile\obj\Debug\Savefile.Properties.Resources.resources
+G:\编程实习\Savefile\Savefile\obj\Debug\Savefile.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.exe
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.pdb
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\bin\Debug\Savefile.exe
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\bin\Debug\Savefile.pdb
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2005\Projects\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.csproj.GenerateResource.Cache
+G:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.exe
+G:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.pdb
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.exe
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.pdb
+K:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.exe
+K:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.pdb
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\bin\Debug\Savefile.exe
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\bin\Debug\Savefile.pdb
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\ResolveAssemblyReference.cache
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.Form1.resources
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.Properties.Resources.resources
+H:\计算机上机编程\计算机编程上机界面部分\Savefile\Savefile\obj\Debug\Savefile.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Savefile\Savefile\obj\Debug\Savefile.exe
+C:\Users\admin\Desktop\Savefile\Savefile\obj\Debug\Savefile.pdb
+C:\Users\admin\Desktop\Savefile\Savefile\bin\Debug\Savefile.exe
+C:\Users\admin\Desktop\Savefile\Savefile\bin\Debug\Savefile.pdb
+C:\Users\admin\Desktop\Savefile\Savefile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Savefile\Savefile\obj\Debug\Savefile.Form1.resources
+C:\Users\admin\Desktop\Savefile\Savefile\obj\Debug\Savefile.Properties.Resources.resources
+C:\Users\admin\Desktop\Savefile\Savefile\obj\Debug\Savefile.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\信息查询\Savefile\obj\Debug\Savefile.exe
+C:\Users\admin\Desktop\信息查询\Savefile\obj\Debug\Savefile.pdb
+C:\Users\admin\Desktop\信息查询\Savefile\bin\Debug\stu_db1.mdb
+C:\Users\admin\Desktop\信息查询\Savefile\bin\Debug\Savefile.exe.config
+C:\Users\admin\Desktop\信息查询\Savefile\bin\Debug\Savefile.exe
+C:\Users\admin\Desktop\信息查询\Savefile\bin\Debug\Savefile.pdb
+C:\Users\admin\Desktop\信息查询\Savefile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\admin\Desktop\信息查询\Savefile\obj\Debug\Savefile.Form1.resources
+C:\Users\admin\Desktop\信息查询\Savefile\obj\Debug\Savefile.Properties.Resources.resources
+C:\Users\admin\Desktop\信息查询\Savefile\obj\Debug\Savefile.csproj.GenerateResource.Cache
