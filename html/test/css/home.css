@@ -1,0 +1,43 @@
+body{
+	margin: 0;
+	padding: 0;
+	font: verdana;
+}
+.home{
+	background: url(../images/coffee-bg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.imgGroup{
+	text-align: center;
+	margin: 10px ;
+}
+.imgGroup img {
+	width: 250px;
+	height: 200px;
+	border-radius: 5%;
+}
+.imgGroup img:hover{
+	border: blue 3px solid;
+}
+.text {
+	font-size: 22.6px;
+	text-align: center;
+	width: 93%;
+	margin-left: 20px;
+	border: green 5px solid;
+	box-shadow: black 0px 0px 2px 2px;
+	color: #ff0066;
+	border-radius: 30px;
+	padding: 20px 5px;
+}
+.coffee{
+	text-align: center;
+	padding: 20px 0px;
+}
+.coffee img{
+    border: red 5px solid;
+	border-radius: 10px ;
+	width: 300px;
+	height: 200px;
+	
+}

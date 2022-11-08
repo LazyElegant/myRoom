@@ -1,0 +1,107 @@
+body,html,h1,ul{
+	margin: 0;
+	padding:  0;
+	
+	font: verdana;
+}
+a{
+	text-decoration: none;
+}
+ul li{
+	list-style: none;
+}
+.top{
+	background-color:#caaaff;
+	height: 50px;
+	line-height:50px;
+	width: 100%;
+	text-align: center;
+	color: #f1db00;
+}
+.left{
+	float: left;
+	width: 15%;
+	background:url(../images/1095.jpg) 0 -110px;
+	height: 650px;
+}
+.list,.contain{
+	width: 100%;
+	background-color: #c9c9c9;
+	border-top: #e8d74b 4px solid;
+	border-bottom: #e8d74b 4px solid;
+	padding: 10px 0px;
+}
+.list ul li:hover{
+	background-color: #c9c9c9;
+	color: red;
+	
+}
+.list ul li{
+	text-align: center;
+	margin: 6px 0px;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	font-size: 13px;
+	color: black;
+	border-radius: 10px;
+	background-color: #eeeeee;
+	font-weight: 600;
+}
+.content{
+	float: left;
+	width: 68%;
+	height: 650px;
+}
+.right{
+	float: left;
+	background:url(../images/1095.jpg) -600px 50px;
+	width: 16.5%;
+	height: 650px;
+}
+
+.contain .text{
+	text-align:  center;
+	width: 90%;
+	margin: auto;
+	color: #157907;
+	font-family: "comic sans ms";
+	font-size: 15px;
+	line-height: 25px;
+}
+.contain .coffee {
+	width: 90%;
+	margin-left: 5%;
+}
+.contain .coffee img{
+	width: 100%;
+	border-radius: 5%;
+	height: 300px;
+	border: #26ff46 5px solid;
+	animation-name: example;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+.contain .coffee:hover{
+	border: blue 3px solid;
+	border-radius: 5%;
+}
+
+@keyframes example {
+  0%   {border-color: pink;}
+  25%  {border-color: cyan;}
+  50%  {border-color: maroon;}
+  75% {border-color: lightgreen;}
+  100% {border-color: lightblue;}
+}
+
+.footer {
+	float: left;
+	line-height: 25px;
+	height: 25px;
+	width: 100%;
+	background-color: #fdaac8;
+	font-weight: 600;
+	text-align: center;
+	font-size: 12px;
+}

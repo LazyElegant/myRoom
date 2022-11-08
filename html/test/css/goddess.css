@@ -1,0 +1,13 @@
+html{
+	background: url(../images/lovely-girl-wallpaper.png);
+	background-size: 200px 300px;
+	background-color: #cccccc;
+	font: verdana;
+}
+.title{
+	color: yellow;
+	font-size: 1.6em;
+	font-family: arial;
+	text-align:center;
+	line-height: 100px;
+}
