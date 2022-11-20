@@ -1,0 +1,188 @@
+body ,html,ul,p{
+	margin:  0;
+	padding: 0;
+	font-family:'JD' ;
+}
+html{
+	
+	border: 2px green solid;
+}
+ul{
+	list-style: none;
+}
+@font-face {
+    font-family: 'Fz';
+    src: url('../font/FZDHTJW.TTF');
+}
+@font-face {
+    font-family: 'JD';
+    src: url('../font/JDJZONGYI.TTF');
+}
+.top{
+	padding: 10px 50px;
+	
+}
+.logo{
+	width: 100px;
+	height:120px;	
+	float: left;
+}
+.textBox{
+	padding: 20px;
+	margin-left: 30px;
+	float: left;
+}
+.top .title{
+	color: #008000;
+	font-size: 35px;
+	font-weight: 900;
+}
+.englishTitle{
+	line-height: 30px;
+	text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,#000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+	font-size: 16.7px;
+	font-weight: 900;
+	color: white;
+	
+}
+.callBox{
+	float: right; 
+	padding: 35px;
+	
+}
+.label{
+	font-size: 20px;
+	color: #008000;
+	font-weight: 600;
+}
+.label .call{
+	color: goldenrod;
+}
+
+.lang{
+	margin-top: 5px;
+	color: #008000;
+	font-size: 15px;
+}
+.nav{
+	width: 100%;
+}
+.nav ul li{
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	width: 12.43%;
+	float: left;
+	background-color: #578e0f;
+	color: #FFFFFF;
+	border-right: 1px #FFFFFF solid ;
+}
+.clearfix:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.main {
+	width: 100%;
+	padding-bottom: 10px;
+	border-bottom: 5px #008000 solid;
+}
+.left{
+	position: relative;
+	float: left;
+	width: 25%;
+	border-right: 0.5px #d1d1d1 solid;
+}
+.leftTitle{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 30px;
+}
+
+.left .title{
+	position: relative;
+	color: #008000;
+	font-size: 16px;
+	margin-left: 20px;
+	top: -5px;
+}
+.right{
+	float: right;
+	width: 74%;
+}
+.list ul li{
+	padding-left: 20px;
+	line-height: 40px;
+	font-size: 15px;
+}
+.contact{
+	border-radius: 10px;
+	background-color: #fdab22;
+	border: 1px #bb6e2a solid;
+	padding: 10px;
+	width: 85%;
+	margin: 10px auto;
+}
+.items{
+	background-color: white;
+	border-radius: 10px;
+	padding: 5px;
+}
+.item{
+	border-radius: 5px;
+	margin-top: 10px;
+	height: 60px;
+	border: 0.3px #D1D1D1 solid;
+}
+.itemBox{
+	float: left;
+	
+}
+.itemBox .name{
+	
+		line-height: 30px;
+}
+.itemBox .number{
+	line-height: 30px;
+	color: #fdab22;
+}
+.right .text{
+	position: absolute;
+	top : 13px;
+	left: 70px;
+	color: #008000;
+	font-weight: 600;
+}
+.right .gd{
+	position: absolute;
+	top : 13px;
+	right: 70px;
+}
+.right .gd a{
+	color: #008000;
+	font-size: 14px;
+	text-decoration: none;
+}
+.butt{
+	background-color: #fbf9fa;
+	border: 1px #cbcbcb solid;
+	width: 70%;
+	border-radius: 10px;
+	color: firebrick;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.xx{
+	position: absolute;
+	bottom: 30px;
+	right: 0px;
+	
+}
+.xx a{
+	text-decoration: none;
+	color: #DAA520;
+}
