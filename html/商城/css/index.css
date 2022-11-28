@@ -1,0 +1,301 @@
+
+/* banner开始 */
+.banner{
+    padding-top:68px;
+    height: 400px;
+    position: relative;
+}
+.banner ul li a img{
+    width: 100%;
+}
+.banner ul li {
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.banner ul li.cur{
+    display: block;
+}
+
+.banner .btns{
+    width: 90px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -45px;
+    height: 4px;
+    right: 0;
+    bottom:30px;
+}
+.banner .btns ol li{
+    list-style: none;
+    width: 20px;
+    float: left;
+    height: 4px;
+    background: #fff;
+    margin: 5px;
+    cursor: pointer;
+}
+.banner .btns ol li.cur{
+    background-color:#C78A49;
+}
+/* 推荐新品内容 */
+.new_pro .pro_detail{
+    height: 365px;
+    position: relative;
+}
+
+.new_pro .pro_detail li{
+    float: left;
+    width: 275px;
+    height: 365px;
+    margin: 0 5px;
+}
+.new_pro .pro_detail li.common_prduct .pic{
+    width: 100%;
+}
+.new_pro .pro_detail a{
+    position: absolute;
+    top: 35%;
+    font-size: 28px;
+    font-family: serif;
+    color:#C3C3C3;
+    font-weight: 600;
+}
+.new_pro .pro_detail a.left{
+    left: -30px;
+    
+}
+.new_pro .pro_detail a.right{
+    right: -30px;
+}
+/*专题活动部分  */
+.special{
+    overflow: hidden;
+}
+.special img{
+    /* CSS属性，作用是给盒子运动过程中有过度效果 */
+    transition: all  0.4s ease 0s;
+}
+.special .pic{
+    position: relative;
+}
+.special .pic:hover img{
+    /* CSS3属性，作用就是放大元素 */
+    transform: scale(1.2);
+    transition: all 0.4s  ease 0s;
+}
+.special .pic span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:0;
+    top: 0;
+    border: 2px solid #fff;
+    transition: all 0.4s  ease 0s;
+}
+.special .pic:hover span{
+    transition: all 0.4s  ease 0s;
+    left: 10px;
+    right: 10px;
+    bottom:10px;
+    top: 10px;
+}
+.special .left{
+    float: left;
+    width: 680px;
+    height: 380px;
+    overflow: hidden;
+}
+.special .right{
+    float: right;
+}
+.special .right .r_top{
+    margin-bottom: 6px;
+    width: 450px;
+    height: 185px;
+    overflow: hidden;
+}
+.special .right .r_bottom{
+    width: 450px;
+    height: 185px;
+    overflow: hidden;
+}
+/* 青竹良品 */
+.qingzhu .content .qz_common{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.qingzhu .content .qz_common ul li{
+    width: 220px;
+    height: 310px;
+    float: left;
+    margin-right: 10px;
+}
+.qingzhu .content .qz_common ul li.common_prduct{
+    padding-top: 0;
+}
+.qingzhu .content .qz_common ul li.common_prduct .pic{
+    width:100%;
+}
+.qingzhu .content .qz_common ul li.last{
+    margin-right: 0;
+}
+/* 全球大牌 */
+.global .content .gl_top{
+    overflow:hidden;
+    margin-bottom: 10px;
+}
+.global .content .gl_top .glo1{
+    width: 504px;
+    height: 358px;
+    background:blue;
+    margin-right: 13px;
+    float: left
+}
+.global .content .gl_top .glo2{
+    margin-bottom: 15px;
+}
+.global .content .gl_top .gol_common{
+    width: 410px;
+    height: 172px;
+    background: gold;
+    float: left;
+}
+.global .content .gl_top .glo4{
+    float: right;
+    width: 197px;
+    height: 358px;
+    background: purple;
+}
+
+.global .content .gl_top .pic{
+    position: relative;
+    overflow: hidden;
+}
+.global .content .gl_top .pic img{
+    transition: all 0.4s  ease 0s;
+}
+.global .content .gl_top .pic:hover img{
+    /* CSS3属性，作用就是放大元素 */
+    transform: scale(1.2);
+}
+.global .content .gl_top .pic span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:0;
+    top: 0;
+    border: 2px solid #fff;
+    transition: all 0.4s  ease 0s;
+}
+.global .content .gl_top .pic:hover span{
+    left: 10px;
+    right: 10px;
+    bottom:10px;
+    top: 10px;
+}
+.global .content .gl_bottom{
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color:#5D5D5D;
+    margin-bottom: 20px;
+}
+.global .content .gl_bottom .gl_chara{
+    width: 210px;
+    margin-right: 22px;
+    float: left;
+}
+.global .content .gl_bottom .gl_chara a{
+    display: block;
+    height:90px;
+    border: 1px solid #E8E8E8;
+    position: relative;
+    overflow: hidden;
+}
+.global .content .gl_bottom .gl_chara a img{
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+    
+}
+.global .content .gl_bottom .gl_chara a:hover img{
+    left: 30%;
+    transition: all 0.2s ease 0s;
+}
+.global .content .gl_bottom .last{
+    margin-right: 0;
+}
+/* 良品体验部分 */
+.lp_ty{
+    background: #F4F0EA;
+    height: 600px;
+}
+.lp_ty .lp_inner .content ul{
+    overflow: hidden;
+}
+.lp_ty .lp_inner .content ul .ty_content{
+    float: left;
+    width: 276px;
+    height: 432px;
+    background:#fff;
+    margin-right: 10px;
+    position: relative;
+}
+.lp_ty .lp_inner .content ul li.last{
+    margin-right:0;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_top{
+    overflow:hidden;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_top img{
+    transition: all 0.5s ease 0s;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_top:hover img{
+    transform: scale(1.1)
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_top img{
+    width: 100%;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_bottom{
+    width: 244px;
+    position: absolute;
+    bottom: 34px;
+    background-color: #fff;
+    left: 50%;
+    margin-left: -130px;
+    padding: 0 8px
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_bottom .title{
+    line-height: 50px;
+    overflow: hidden;
+    
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_bottom .title .tit_name{
+    font-size: 14px;
+    font-weight: 600;
+    float: left;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_bottom .title .tit_pri{
+    float: right;
+    color: #C78A49;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_bottom .detail{
+    font-size: 12px;
+    line-height: 18px;
+    color: #4D4D4D;
+    /* 文字溢出省略号 */
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.lp_ty .lp_inner .content ul .ty_content .ty_bottom .ty_footer{
+    font-size: 12px;
+    line-height: 30px;
+    color: #777777;
+}
