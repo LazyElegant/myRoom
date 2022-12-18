@@ -1,0 +1,21 @@
+﻿body {
+    padding: 0px 20px;
+}
+.label {
+    width: 80px;
+    line-height: 40px;
+    display: inline-block;
+}
+p{
+    line-height:40px;
+    margin:0;
+}
+.Gbook {
+    border: 1px #f6d493 solid;
+}
+.thead {
+    background-color: lightgray;
+}
+.topLab {
+    padding: 0px 20px;
+}
