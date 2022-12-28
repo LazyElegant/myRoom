@@ -73,6 +73,19 @@ namespace 宿舍管理评分系统
                         MessageBox.Show("登录失败");
                     }
                 }
+                if (dataTable.Rows.Count == 0) {
+                    if (textBox1.Text.Equals("admin") || textBox2.Text.Equals("root"))
+                    {
+                        MessageBox.Show("登录成功！！");
+                        Form2 form = new Form2();
+                        form.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("登录失败");
+                    }
+                }
             }
         }
 

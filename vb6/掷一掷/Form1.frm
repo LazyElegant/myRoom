@@ -393,7 +393,7 @@ Begin VB.Form Form1
       End
    End
    Begin VB.Label Label2 
-      Caption         =   "请输入投掷次数：（小于2000次）"
+      Caption         =   "请输入投掷次数：（小于10000次）"
       BeginProperty Font 
          Name            =   "宋体"
          Size            =   12
@@ -439,8 +439,8 @@ Private Sub Command1_Click()
     Dim sum As Integer
     Dim blue As Integer
     Dim red As Integer
-    If fre >= 2000 Or fre <= 0 Then
-        MsgBox ("次数需在0~1999之间！！！")
+    If fre >= 10000 Or fre <= 0 Then
+        MsgBox ("次数需在0~9999之间！！！")
     Else
         For i = 1 To 10
             Shape1(i).Top = 5280
@@ -452,8 +452,8 @@ Private Sub Command1_Click()
             b = Int(Rnd * 6) + 1
             sum = a + b
             
-            Shape1(sum - 2).Height = Shape1(sum - 2).Height + 10
-            Shape1(sum - 2).Top = Shape1(sum - 2).Top - 10
+            Shape1(sum - 2).Height = Shape1(sum - 2).Height + 1
+            Shape1(sum - 2).Top = Shape1(sum - 2).Top - 1
             
             If sum = 2 Or sum = 3 Or sum = 4 Or sum = 10 Or sum = 11 Or sum = 12 Then
                 blue = blue + 1

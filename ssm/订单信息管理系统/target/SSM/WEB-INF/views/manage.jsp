@@ -104,7 +104,7 @@
 	</body>
 	<script>
 		$(".detele").click(function (){
-			if(confirm("确定删除该食材?")){
+			if(confirm("确定删除该订单?")){
 				var  id = $(this).parent().attr('id');
 				document.location.href =   "http://localhost:8080/deleteOrder?id=" + id;
 			}
@@ -120,11 +120,11 @@
 			});
 			ids = ids.substring(1);
 			if (ids!==""){
-				if(confirm("确定删除这些食材?")){
+				if(confirm("确定删除这些订单?")){
 					document.location.href = "http://localhost:8080/deleteOrderList?ids=" + ids;
 				}
 			}else {
-				alert("请选择要删除的食材");
+				alert("请选择要删除的订单");
 			}
 		})
 	</script>

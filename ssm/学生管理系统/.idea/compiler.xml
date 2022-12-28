@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tfboys鞋城" />
         <module name="tfboys鞋城 - 副本" />
         <module name="SSM" />
         <module name="学生管理系统" />
-        <module name="tfboys鞋城" />
       </profile>
     </annotationProcessing>
   </component>

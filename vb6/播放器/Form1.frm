@@ -119,6 +119,9 @@ Private Sub Command1_Click()
     
     CommonDialog1.ShowOpen
     str1 = CommonDialog1.FileName
+    If CommonDialog1.FileTitle = "" Then
+        Exit Sub
+    End If
     str2 = App.Path & "\music\" & CommonDialog1.FileTitle
     Set file = CreateObject("scripting.filesystemobject")
     file.createtextfile (str2)

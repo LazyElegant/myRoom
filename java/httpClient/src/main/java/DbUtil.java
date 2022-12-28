@@ -1,3 +1,4 @@
+import java.net.Socket;
 import java.sql.*;
 
 public class DbUtil {
@@ -11,7 +12,9 @@ public class DbUtil {
     }
 
     public static boolean login(String name,String password) throws Exception{
-
+        1.9099
+                2.new Socket()
+            3.socket.getInputStream()
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE name = ? AND password = ?");
