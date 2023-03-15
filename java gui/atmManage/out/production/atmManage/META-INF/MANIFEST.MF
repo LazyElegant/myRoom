@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: text
-Class-Path: lib\mysql-connector-java-8.0.11.jar
-
