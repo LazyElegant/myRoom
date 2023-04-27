@@ -1,2 +1,0 @@
-id=525574, userId=907253, bookId=934302
-id=478596, userId=59214, bookId=324387
