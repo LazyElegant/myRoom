@@ -1,3 +1,0 @@
-id=594068, name=ynu, password=admin, status=1
-id=248134, name=wang, password=123123, status=2
-id=8742, name=ttt, password=456456, status=2

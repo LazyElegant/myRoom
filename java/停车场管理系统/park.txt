@@ -1,2 +1,0 @@
-id=928333, number=闽123123, type=2, month=2, startDate=2022-06-21 17:36:31, endDate=2022-06-22 22:32:48, price=75, present=2
-id=497452, number=闽767182, type=2, month=2, startDate=2022-06-23 13:27:39, endDate=2022-06-25 18:28:08, price=136, present=2
